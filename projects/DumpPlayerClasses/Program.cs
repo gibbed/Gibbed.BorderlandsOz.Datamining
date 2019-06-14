@@ -97,7 +97,7 @@ namespace DumpPlayerClasses
                         writer.WriteValue(characterClassId.DlcCharacterDef.GetPath());
                     }
 
-                    DumpDefaultSaveGame(writer, playerClassDefinition.CharacterNameId.DefaultSaveGame);
+                    //DumpDefaultSaveGame(writer, playerClassDefinition.CharacterNameId.DefaultSaveGame);
 
                     writer.WriteEndObject();
                 }

@@ -21,11 +21,11 @@
  */
 
 using System;
-using System.Diagnostics;
 using System.Collections.Generic;
+using System.Diagnostics;
+using System.IO;
 using System.Linq;
 using System.Text;
-using System.IO;
 using Gibbed.Unreflect.Core;
 using Gibbed.Unreflect.Runtime;
 
@@ -100,14 +100,6 @@ namespace BorderlandsOzDatamining
                     Console.WriteLine("Datamining...");
                     callback(engine);
                 }
-                /*
-                catch (Exception)
-                {
-                    runtime.ResumeThreads();
-                    runtime.CloseProcess();
-                    throw;
-                }
-                */
                 finally
                 {
                     runtime.ResumeThreads();

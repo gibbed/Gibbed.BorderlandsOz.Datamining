@@ -325,14 +325,14 @@
     "player_level_requirement": 0,
     "icon_texture_name": "None"
   },
-  "GD_Lawbringer.injured.LawbringerInjuredDefinition.Behavior_AttributeEffect_2.SkillDefinition_1": {
+  "GD_Lawbringer.injured.LawbringerInjuredDefinition.Behavior_AttributeEffect_1.SkillDefinition_0": {
     "name": "Power Boost",
     "default_starting_grade": 0,
     "max_grade": 12,
     "player_level_requirement": 0,
     "icon_texture_name": "None"
   },
-  "GD_Lawbringer.injured.LawbringerInjuredDefinition.Behavior_AttributeEffect_5.SkillDefinition_2": {
+  "GD_Lawbringer.injured.LawbringerInjuredDefinition.Behavior_AttributeEffect_4.SkillDefinition_1": {
     "description": "Defense Boost",
     "default_starting_grade": 0,
     "max_grade": 12,
@@ -677,52 +677,52 @@
     "player_level_requirement": 0,
     "icon_texture_name": "None"
   },
-  "GD_PlayerShared.Behaviors.PlayerBehavior_LevelUp.Behavior_AttributeEffect_1.SkillDefinition_1": {
+  "GD_PlayerShared.Behaviors.PlayerBehavior_LevelUp.Behavior_AttributeEffect_0.SkillDefinition_0": {
     "default_starting_grade": 1,
     "max_grade": 12,
     "player_level_requirement": 0,
     "icon_texture_name": "None"
   },
-  "GD_PlayerShared.Behaviors.PlayerBehavior_LevelUp.Behavior_AttributeEffect_2.SkillDefinition_3": {
+  "GD_PlayerShared.Behaviors.PlayerBehavior_LevelUp.Behavior_AttributeEffect_1.SkillDefinition_2": {
     "default_starting_grade": 1,
     "max_grade": 12,
     "player_level_requirement": 0,
     "icon_texture_name": "None"
   },
-  "GD_PlayerShared.Behaviors.PlayerBehavior_LevelUp.Behavior_AttributeEffect_4.SkillDefinition_3": {
+  "GD_PlayerShared.Behaviors.PlayerBehavior_LevelUp.Behavior_AttributeEffect_3.SkillDefinition_2": {
     "default_starting_grade": 1,
     "max_grade": 12,
     "player_level_requirement": 0,
     "icon_texture_name": "None"
   },
-  "GD_PlayerShared.Behaviors.PlayerBehavior_LevelUpNaturally.Behavior_AttributeEffect_2.SkillDefinition_2": {
+  "GD_PlayerShared.Behaviors.PlayerBehavior_LevelUpNaturally.Behavior_AttributeEffect_1.SkillDefinition_1": {
     "default_starting_grade": 1,
     "max_grade": 12,
     "player_level_requirement": 0,
     "icon_texture_name": "None"
   },
-  "GD_PlayerShared.injured.PlayerInjuredDefinition.Behavior_AttributeEffect_2.SkillDefinition_1": {
+  "GD_PlayerShared.injured.PlayerInjuredDefinition.Behavior_AttributeEffect_1.SkillDefinition_0": {
     "name": "Power Boost",
     "default_starting_grade": 0,
     "max_grade": 12,
     "player_level_requirement": 0,
     "icon_texture_name": "None"
   },
-  "GD_PlayerShared.injured.PlayerInjuredDefinition.Behavior_AttributeEffect_5.SkillDefinition_2": {
+  "GD_PlayerShared.injured.PlayerInjuredDefinition.Behavior_AttributeEffect_4.SkillDefinition_1": {
     "description": "Defense Boost",
     "default_starting_grade": 0,
     "max_grade": 12,
     "player_level_requirement": 0,
     "icon_texture_name": "None"
   },
-  "GD_Prototype.injured.PrototypeInjuredDefinition.Behavior_AttributeEffect_2.SkillDefinition_1": {
+  "GD_Prototype.injured.PrototypeInjuredDefinition.Behavior_AttributeEffect_1.SkillDefinition_0": {
     "name": "Power Boost",
     "default_starting_grade": 0,
     "max_grade": 12,
     "player_level_requirement": 0,
     "icon_texture_name": "None"
   },
-  "GD_Prototype.injured.PrototypeInjuredDefinition.Behavior_AttributeEffect_5.SkillDefinition_2": {
+  "GD_Prototype.injured.PrototypeInjuredDefinition.Behavior_AttributeEffect_4.SkillDefinition_1": {
     "description": "Defense Boost",
     "default_starting_grade": 0,
     "max_grade": 12,

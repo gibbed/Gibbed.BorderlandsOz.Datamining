@@ -44,9 +44,7 @@ namespace DumpMissions
                 throw new InvalidOperationException();
             }
 
-            Directory.CreateDirectory("dumps");
-
-            using (var output = new StreamWriter(Path.Combine("dumps", "Missions.json"), false, Encoding.Unicode))
+            using (var output = BorderlandsOzDatamining.Dataminer.NewDump("Missions.json"))
             using (var writer = new JsonTextWriter(output))
             {
                 writer.Indentation = 2;

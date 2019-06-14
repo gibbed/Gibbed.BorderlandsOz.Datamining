@@ -52,12 +52,7 @@ namespace DumpDownloadableContentManager
                 throw new InvalidOperationException();
             }
 
-            Directory.CreateDirectory("dumps");
-
-            using (
-                var output = new StreamWriter(Path.Combine("dumps", "Credits.json"),
-                                              false,
-                                              Encoding.Unicode))
+            using (var output = BorderlandsOzDatamining.Dataminer.NewDump("Credits.json"))
             using (var writer = new JsonTextWriter(output))
             {
                 writer.Indentation = 2;

@@ -64,12 +64,7 @@ namespace DumpAssetLibraryManager
                 throw new InvalidOperationException();
             }
 
-            Directory.CreateDirectory("dumps");
-
-            using (
-                var output = new StreamWriter(Path.Combine("dumps", "Asset Library Manager.json"),
-                                              false,
-                                              Encoding.Unicode))
+            using (var output = BorderlandsOzDatamining.Dataminer.NewDump("Asset Library Manager.json"))
             using (var writer = new JsonTextWriter(output))
             {
                 writer.Indentation = 2;

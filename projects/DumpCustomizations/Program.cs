@@ -45,9 +45,7 @@ namespace DumpCustomizations
                 throw new InvalidOperationException();
             }
 
-            Directory.CreateDirectory("dumps");
-
-            using (var output = new StreamWriter(Path.Combine("dumps", "Customizations.json"), false, Encoding.Unicode))
+            using (var output = BorderlandsOzDatamining.Dataminer.NewDump("Customizations.json"))
             using (var writer = new JsonTextWriter(output))
             {
                 writer.Indentation = 2;

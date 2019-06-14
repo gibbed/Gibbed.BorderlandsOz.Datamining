@@ -87,9 +87,7 @@ namespace DumpItems
                 }
             }
 
-            Directory.CreateDirectory("dumps");
-
-            using (var output = new StreamWriter(Path.Combine("dumps", "Weapon Types.json"), false, Encoding.Unicode))
+            using (var output = BorderlandsOzDatamining.Dataminer.NewDump("Weapon Types.json"))
             using (var writer = new JsonTextWriter(output))
             {
                 writer.Indentation = 2;
@@ -208,7 +206,7 @@ namespace DumpItems
                 }
             }
 
-            using (var output = new StreamWriter(Path.Combine("dumps", "Item Types.json"), false, Encoding.Unicode))
+            using (var output = BorderlandsOzDatamining.Dataminer.NewDump("Item Types.json"))
             using (var writer = new JsonTextWriter(output))
             {
                 writer.Indentation = 2;

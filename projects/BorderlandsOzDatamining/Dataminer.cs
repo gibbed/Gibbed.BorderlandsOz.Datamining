@@ -39,7 +39,7 @@ namespace BorderlandsOzDatamining
             var fullPaths = new List<string>();
             fullPaths.Add("dumps");
             fullPaths.AddRange(paths);
-            return new StreamWriter(Path.Combine(fullPaths.ToArray()), false, Encoding.Unicode);
+            return new StreamWriter(Path.Combine(fullPaths.ToArray()), false, Encoding.UTF8);
         }
 
         private Process FindSuitableProcess(out string config)

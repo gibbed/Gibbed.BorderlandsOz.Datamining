@@ -70,13 +70,11 @@ namespace DumpParts
                 throw new InvalidOperationException();
             }
 
-            Directory.CreateDirectory("dumps");
-
             var weaponParts = engine.Objects
                 .Where(o => o.IsA(weaponPartDefinitionClass) == true && o.GetName().StartsWith("Default__") == false)
                 .Distinct()
                 .OrderBy(o => o.GetPath());
-            using (var output = new StreamWriter(Path.Combine("dumps", "Weapon Parts.json"), false, Encoding.Unicode))
+            using (var output = BorderlandsOzDatamining.Dataminer.NewDump("Weapon Parts.json"))
             using (var writer = new JsonTextWriter(output))
             {
                 writer.Indentation = 2;
@@ -139,7 +137,7 @@ namespace DumpParts
                 .Where(o => o.IsA(weaponNamePartDefinitionClass) == true && o.GetName().StartsWith("Default__") == false)
                 .Distinct()
                 .OrderBy(o => o.GetPath());
-            using (var output = new StreamWriter(Path.Combine("dumps", "Weapon Name Parts.json"), false, Encoding.Unicode))
+            using (var output = BorderlandsOzDatamining.Dataminer.NewDump("Weapon Name Parts.json"))
             using (var writer = new JsonTextWriter(output))
             {
                 writer.Indentation = 2;
@@ -343,7 +341,7 @@ namespace DumpParts
                             o.GetName().StartsWith("Default__") == false)
                 .Distinct()
                 .OrderBy(o => o.GetPath());
-            using (var output = new StreamWriter(Path.Combine("dumps", "Item Parts.json"), false, Encoding.Unicode))
+            using (var output = BorderlandsOzDatamining.Dataminer.NewDump("Item Parts.json"))
             using (var writer = new JsonTextWriter(output))
             {
                 writer.Indentation = 2;
@@ -410,7 +408,7 @@ namespace DumpParts
                 .Where(o => o.IsA(itemNamePartDefinitionClass) == true && o.GetName().StartsWith("Default__") == false)
                 .Distinct()
                 .OrderBy(o => o.GetPath());
-            using (var output = new StreamWriter(Path.Combine("dumps", "Item Name Parts.json"), false, Encoding.Unicode))
+            using (var output = BorderlandsOzDatamining.Dataminer.NewDump("Item Name Parts.json"))
             using (var writer = new JsonTextWriter(output))
             {
                 writer.Indentation = 2;

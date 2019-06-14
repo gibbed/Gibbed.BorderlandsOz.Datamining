@@ -13,8 +13,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Dumpers", "Dumpers", "{AC56
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BorderlandsOzDatamining", "projects\BorderlandsOzDatamining\BorderlandsOzDatamining.csproj", "{3E2F2EC6-F71F-4F39-9A29-2CF32F650BE3}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Test", "projects\Test\Test.csproj", "{FD3C44B8-CE16-46A4-9169-76580F41D66F}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DumpAssetLibraryManager", "projects\DumpAssetLibraryManager\DumpAssetLibraryManager.csproj", "{FA75F666-43D0-465B-844C-1FCFD002B3D1}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DumpBalance", "projects\DumpBalance\DumpBalance.csproj", "{00CAEE95-E77B-47B0-B5BF-BEAB533D8C20}"
@@ -57,14 +55,10 @@ Global
 		{78358FEB-E627-490E-8701-3C5DBE2D72FA}.Debug|x86.ActiveCfg = Debug|Any CPU
 		{78358FEB-E627-490E-8701-3C5DBE2D72FA}.Debug|x86.Build.0 = Debug|Any CPU
 		{78358FEB-E627-490E-8701-3C5DBE2D72FA}.Release|x86.ActiveCfg = Release|Any CPU
-		{3E2F2EC6-F71F-4F39-9A29-2CF32F650BE3}.Debug|x86.ActiveCfg = Debug|x86
-		{3E2F2EC6-F71F-4F39-9A29-2CF32F650BE3}.Debug|x86.Build.0 = Debug|x86
-		{3E2F2EC6-F71F-4F39-9A29-2CF32F650BE3}.Release|x86.ActiveCfg = Release|x86
-		{3E2F2EC6-F71F-4F39-9A29-2CF32F650BE3}.Release|x86.Build.0 = Release|x86
-		{FD3C44B8-CE16-46A4-9169-76580F41D66F}.Debug|x86.ActiveCfg = Debug|x86
-		{FD3C44B8-CE16-46A4-9169-76580F41D66F}.Debug|x86.Build.0 = Debug|x86
-		{FD3C44B8-CE16-46A4-9169-76580F41D66F}.Release|x86.ActiveCfg = Release|x86
-		{FD3C44B8-CE16-46A4-9169-76580F41D66F}.Release|x86.Build.0 = Release|x86
+		{3E2F2EC6-F71F-4F39-9A29-2CF32F650BE3}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{3E2F2EC6-F71F-4F39-9A29-2CF32F650BE3}.Debug|x86.Build.0 = Debug|Any CPU
+		{3E2F2EC6-F71F-4F39-9A29-2CF32F650BE3}.Release|x86.ActiveCfg = Release|Any CPU
+		{3E2F2EC6-F71F-4F39-9A29-2CF32F650BE3}.Release|x86.Build.0 = Release|Any CPU
 		{FA75F666-43D0-465B-844C-1FCFD002B3D1}.Debug|x86.ActiveCfg = Debug|x86
 		{FA75F666-43D0-465B-844C-1FCFD002B3D1}.Debug|x86.Build.0 = Debug|x86
 		{FA75F666-43D0-465B-844C-1FCFD002B3D1}.Release|x86.ActiveCfg = Release|x86

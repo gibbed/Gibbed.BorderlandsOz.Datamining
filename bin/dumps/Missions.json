@@ -1,0 +1,743 @@
+﻿{
+  "GD_Co_Boarding_Party.M_BoardingParty": {
+    "number": 47,
+    "name": "Boarding Party",
+    "description": "Jack did his research before hiring you on to his Vault Hunting crew. He's left the files around the [place]Hyperion Hub of Heroism[-place], and wants you to pick them up before the Lost Legion finds them, just in case.",
+    "is_plot_critical": false,
+    "can_be_failed": false
+  },
+  "GD_Co_Boomshakalaka.M_Boomshakalaka": {
+    "number": 26,
+    "name": "Boomshakalaka",
+    "description": "Dunks Watson is planning the most awesome slam dunk ever.",
+    "is_plot_critical": false,
+    "can_be_failed": false
+  },
+  "GD_Co_Chapter01.M_CH01a_MoonShot": {
+    "number": 0,
+    "name": "Welcome to Helios",
+    "description": "Welcome to [place]Helios Station[-place]! Follow the CL4P-TP, otherwise known as a claptrap unit, to meet the man behind the vision -- your employer, and the man who signs your check, Jack.",
+    "is_plot_critical": true,
+    "can_be_failed": false
+  },
+  "GD_Co_Chapter01.M_CH01b_MoonShot": {
+    "number": 1,
+    "name": "Lost Legion Invasion",
+    "description": "Some soldiers from the Lost Legion have assaulted [place]Helios Station[-place], where you were meant to meet Jack for a mission briefing before embarking on a Vault hunting expedition. Well, you've met, and you need to help him activate security protocols to kick their Lost Legion butts outta here.",
+    "is_plot_critical": true,
+    "can_be_failed": false
+  },
+  "GD_Co_Chapter02.M_CH02_Airstrip": {
+    "number": 2,
+    "name": "Marooned",
+    "description": "You've survived the Moonshot Cannon from [place]Helios[-place] to the surface of Elpis. Now you have to make your way to [place]Concordia[-place]... on the other side of an airless wasteland.",
+    "is_plot_critical": true,
+    "can_be_failed": false
+  },
+  "GD_Co_Chapter03.M_Co_Ch03_Concordia": {
+    "number": 3,
+    "name": "Systems Jammed",
+    "description": "You've reached [place]Concordia[-place], but still need to find the source of the pesky signal blocking Hyperion's defenses on [place]Helios[-place]. To do that, you need to first find your way in.",
+    "is_plot_critical": true,
+    "can_be_failed": false
+  },
+  "GD_Co_Chapter04.M_Co_Chapter04": {
+    "number": 4,
+    "name": "A New Direction",
+    "description": "Now that you know the jamming signal's origin, it's time to haul ass and disable it so Jack can take back control of Helios Station from Zarpedon and her cult of followers. There'll probably be some resistance on the way, but that's what makes life interesting!",
+    "is_plot_critical": true,
+    "can_be_failed": false
+  },
+  "GD_Co_Chapter05.M_Cork_WreckMain": {
+    "number": 5,
+    "name": "Intelligences of the Artificial Persuasion",
+    "description": "There's probably more than one way to assault the [place]Eye of Helios[-place]... but the BEST way is definitely with an unstoppable army of robot soldiers. The first step is finding a suitable AI program.",
+    "is_plot_critical": true,
+    "can_be_failed": false
+  },
+  "GD_Co_Chapter11.M_DahlDigsite": {
+    "number": 11,
+    "name": "The Beginning of the End",
+    "description": "It's a race against time to find and get into the vault before Lilith and Roland do. Head to [place]Vorago Solitude[-place], find the entrance, and don't let anyone stand in your way.",
+    "is_plot_critical": true,
+    "can_be_failed": false
+  },
+  "GD_Co_Cleanliness_Uprising.M_Cleanliness_Uprising": {
+    "number": 54,
+    "name": "Cleanliness Uprising",
+    "description": "Talk to R-0513, ''Rosie'', the robot. She needs your help in the high-casualty war against germs.",
+    "is_plot_critical": false,
+    "can_be_failed": false
+  },
+  "GD_Co_CorkRaid.M_CorkRaid": {
+    "number": 74,
+    "name": "The Bestest Story Ever Told",
+    "description": "Once upon a time there were Vault Hunters on the moon, and they went after a raid boss...",
+    "is_plot_critical": false,
+    "can_be_failed": false
+  },
+  "GD_Co_Detention.M_Detention": {
+    "number": 48,
+    "name": "An Urgent Message",
+    "description": "Professor Nakayama needs to get an urgent message to Jack, but he's stuck in a detention facility, which certainly had nothing to do with how obnoxious he is. You should probably liberate him. Maybe.",
+    "is_plot_critical": false,
+    "can_be_failed": false
+  },
+  "GD_Co_DontShootMessenger.MissionDef.M_DontShootMsgr": {
+    "number": 69,
+    "name": "Don't Shoot the Messenger",
+    "description": "Deliver this ECHO to a messenger named ''Hanna'' waiting near Lunar Junction in [place]Triton Flats[-place].",
+    "is_plot_critical": false,
+    "can_be_failed": false
+  },
+  "GD_Co_EmptyBillabong.M_EmptyBillaBong": {
+    "number": 25,
+    "name": "The Empty Billabong",
+    "description": "One of Peepot's mates, the Jolly Swagman, has gone missing somewhere on the moon. Peepot has asked you to find him.",
+    "is_plot_critical": false,
+    "can_be_failed": false
+  },
+  "GD_Co_FollowYourHeart.M_FollowYourHeart": {
+    "number": 17,
+    "name": "Follow Your Heart",
+    "description": "Springs needs you to take some posters to Deadlift to remind him that it is what's inside that counts. That is to say, probably some lint and excess protein, but whatever.",
+    "is_plot_critical": false,
+    "can_be_failed": false
+  },
+  "GD_Co_GuardianHunter.MissionDef.M_GuardianHunter": {
+    "number": 75,
+    "name": "Guardian Hunter",
+    "description": "A bloke named Sterwin has asked for help in capturing Guardian Wraiths, a vicious and dangerous life form on Elpis.",
+    "is_plot_critical": false,
+    "can_be_failed": false
+  },
+  "GD_Co_GuardianHunter.MissionDef.M_SterwinForever": {
+    "number": 76,
+    "name": "Sterwin Forever",
+    "description": "Sterwin returns, but now his mission is one of conservation. He wants you to help him collect the critically-endangered Opha.",
+    "is_plot_critical": false,
+    "can_be_failed": false
+  },
+  "GD_Co_HomeDelivery.M_HomeDelivery": {
+    "number": 36,
+    "name": "Home Delivery",
+    "description": "Sir Hammerlock, a zoologist on Pandora, has requested your assistance in capturing and exporting some moon critters. It's dangerous and sort-of-kind-of-not-really within-the-realm-of-legal per se... so, right up your alley!",
+    "is_plot_critical": false,
+    "can_be_failed": false
+  },
+  "GD_Co_Hot_Head.M_Hot_Head": {
+    "number": 52,
+    "name": "Hot Head",
+    "description": "There's a very angry individual locked in a closet somewhere in the [place]Hyperion Hub of Heroism[-place], and Jack wants you to calm him down. You just have to find him first.",
+    "is_plot_critical": false,
+    "can_be_failed": false
+  },
+  "GD_Co_IceHoles.M_Co_IceHoles": {
+    "number": 28,
+    "name": "Bunch of Ice Holes",
+    "description": "Nina's refrigerator has broken down. She's in dire need of some special ice that'll keep important medical stuff, as well as lunch, chilled for an unusually long time. Grab the drill, head to Frozen Gulch out in [place]Triton Flats[-place], and start drilling.",
+    "is_plot_critical": false,
+    "can_be_failed": false
+  },
+  "GD_Co_Kill_Meg.M_Kill_Meg": {
+    "number": 51,
+    "name": "Kill Meg",
+    "description": "Nakayama has created a genetic aberration that is now living in the [place]Hyperion Hub of Heroism[-place] trash compactor. He's kind of but not really okay with it growing huge on other people's waste, so he wants you to head down there and take care of it.",
+    "is_plot_critical": false,
+    "can_be_failed": true
+  },
+  "GD_Co_LaserRebootMission.M_LaserRebootMission": {
+    "number": 10,
+    "name": "Eye to Eye",
+    "description": "Zarpedon locked down the Eye of Helios. You have to go down there and actually physically turn it off, since turning it off from the command station is no longer an option.",
+    "is_plot_critical": true,
+    "can_be_failed": false
+  },
+  "GD_Co_LastRequests.M_LastRequests": {
+    "number": 18,
+    "name": "Last Requests",
+    "description": "You found a corpse just lying around. Of course the first thing you should do is check to see if there are still any valuables hidden in his pockets.",
+    "is_plot_critical": false,
+    "can_be_failed": false
+  },
+  "GD_Co_MoonSlaughter.M_Co_MoonSlaughter01": {
+    "number": 200,
+    "name": "DAHL Combat Training: Round 1",
+    "description": "TR4NU, Dahl's automated combat training AI, will teach you how to kick ass... by kicking your ass.",
+    "is_plot_critical": true,
+    "can_be_failed": true
+  },
+  "GD_Co_MoonSlaughter.M_Co_MoonSlaughter02": {
+    "number": 201,
+    "name": "DAHL Combat Training: Round 2",
+    "description": "So you've survived Round 1, but TR4NU has more tricks up his digital representation of a sleeve.",
+    "is_plot_critical": false,
+    "can_be_failed": true
+  },
+  "GD_Co_MoonSlaughter.M_Co_MoonSlaughter03": {
+    "number": 202,
+    "name": "DAHL Combat Training: Round 3",
+    "description": "Round 2 is finished, but TR4NU isn't done with you yet! On to Round 3!",
+    "is_plot_critical": false,
+    "can_be_failed": true
+  },
+  "GD_Co_MoonSlaughter.M_Co_MoonSlaughter04": {
+    "number": 203,
+    "name": "DAHL Combat Training: Round 4",
+    "description": "TR4NU has decided to take the kid gloves off for Round 4.",
+    "is_plot_critical": false,
+    "can_be_failed": true
+  },
+  "GD_Co_MoonSlaughter.M_Co_MoonSlaughter05": {
+    "number": 204,
+    "name": "DAHL Combat Training: Round 5",
+    "description": "Okay, so you have some skill. But TR4NU isn't done with you yet, not by a long shot.",
+    "is_plot_critical": false,
+    "can_be_failed": true
+  },
+  "GD_Co_Motivation.M_Motivation": {
+    "number": 16,
+    "name": "Land Among the Stars",
+    "description": "Springs needs your help to support the booming business of inspirational posters. Go to one of her jump pads, use it, and do something cool while the cameras record in embarassing detail every moment of your airborne expression.",
+    "is_plot_critical": false,
+    "can_be_failed": false
+  },
+  "GD_Co_NovaNoProblem.M_NovaNoProblem": {
+    "number": 20,
+    "name": "Nova? No Problem!",
+    "description": "Springs has a plan, just trust her on this. She'll explain what you're doing now that you've already agreed to do it. First, grab a shield.",
+    "is_plot_critical": false,
+    "can_be_failed": false
+  },
+  "GD_Co_Paint_Job.M_Paint_Job": {
+    "number": 50,
+    "name": "Paint Job",
+    "description": "Professor Nakayama is tired of waiting for a response to his love note, and he's ready to do something drastic. He needs you to find some yellow paint and some flowers.",
+    "is_plot_critical": false,
+    "can_be_failed": false
+  },
+  "GD_Co_PopRacing.M_Co_PopRacing": {
+    "number": 29,
+    "name": "Pop Racing",
+    "description": "A snotty little brat named Napykins Lunestalker reckons he's the best Moon Buggy driver on the planetoid. Springs wants you to show him how wrong he is.",
+    "is_plot_critical": false,
+    "can_be_failed": true
+  },
+  "GD_Co_PushButtonMission.M_PushButtonMission": {
+    "number": 49,
+    "name": "Handsome AI",
+    "description": "Professor Nakayama wants to create an artificial intelligence based on Jack. If Jack were to die, the AI would still live on!",
+    "is_plot_critical": false,
+    "can_be_failed": false
+  },
+  "GD_Co_ReturnOfCapnChef.M_ReturnOfCaptainChef": {
+    "number": 46,
+    "name": "Return of Captain Chef",
+    "description": "Captain Chef has come to Elpis to claim it... again. Guess what he needs help with, again? Yep. Flag-hoisting. Grab the flag, and in the name of King Greg, plant it.",
+    "is_plot_critical": false,
+    "can_be_failed": false
+  },
+  "GD_Co_RoughLove.M_Co_RoughLove": {
+    "number": 38,
+    "name": "Rough Love",
+    "description": "Nina needs love, stat, and she's decided on a cunning course of action to find it. Act as her messenger of love, delivering a darling set of gifts to each potential life mate.",
+    "is_plot_critical": false,
+    "can_be_failed": false
+  },
+  "GD_Co_SecretChamber.M_SecretChamber": {
+    "number": 41,
+    "name": "The Secret Chamber",
+    "description": "You found an old data recorder on board the Drakensburg, and Pickle is intrigued. What secrets could it contain? And how many of those can Pickle fit into his pockets? He wants you to plug the recorder into a reader and find out.",
+    "is_plot_critical": false,
+    "can_be_failed": false
+  },
+  "GD_Co_Side_EngineerMoonShot.M_EngineerMoonShot": {
+    "number": 55,
+    "name": "To the Moon",
+    "description": "Jack thinks it would be a great idea to send people to the moon using the Moonshot Cannon as a form of rapid transit. There's a Lost Legion defector that would be perfect for assuring the quality of the trip; go find him and convince him to take a ride.",
+    "is_plot_critical": false,
+    "can_be_failed": true
+  },
+  "GD_Co_Side_Exploders.M_Exploders": {
+    "number": 67,
+    "name": "Things That Go Boom",
+    "description": "Jack's got a new AI routine for his loaders, and he wants to test it out. Go find one and send it to a maintenance station for an upgrade.",
+    "is_plot_critical": false,
+    "can_be_failed": true
+  },
+  "GD_Co_Side_FreshAir.M_FreshAir": {
+    "number": 57,
+    "name": "Fresh Air",
+    "description": "Doctor Minte is freaking out. He needs your help. Just wait one second...",
+    "is_plot_critical": false,
+    "can_be_failed": false
+  },
+  "GD_Co_Side_Lab19.M_Lab19": {
+    "number": 59,
+    "name": "Lab 19",
+    "description": "You found a horribly mangled, surely dying scientist who has begged you to stop whatever killed him.  Head over to Lab 19 and find the menace.",
+    "is_plot_critical": false,
+    "can_be_failed": false
+  },
+  "GD_Co_Side_LockAndLoad.M_LockAndLoad": {
+    "number": 56,
+    "name": "Lock and Load",
+    "description": "Jack's first thought to send people down to the moon's surface using the Moonshot Cannon was less than ideal, considering the test subject is likely dead. Loaders, however, are robots, not made of flesh and bone, and therefore not easily broken. Go find a few so you can help test idea number two.",
+    "is_plot_critical": false,
+    "can_be_failed": false
+  },
+  "GD_Co_Side_Loop.M_InfiniteLoop": {
+    "number": 58,
+    "name": "Infinite Loop",
+    "description": "There's something wrong with the computers that are supposed to be building weapon prototypes for you. Go investigate the blockage so you can get your loot on.",
+    "is_plot_critical": false,
+    "can_be_failed": false
+  },
+  "GD_Co_Side_PickingUp.M_PickingUpThePieces": {
+    "number": 70,
+    "name": "Picking Up the Pieces",
+    "description": "Jack thinks the Eye isn't completely beyond all hope for salvation. He wants you to gather some of the chunks and try to put it back together again. Good luck with that.",
+    "is_plot_critical": false,
+    "can_be_failed": false
+  },
+  "GD_Co_Side_Reshirt.M_RedShirt": {
+    "number": 68,
+    "name": "Red, Then Dead",
+    "description": "Tassiter has effectively bribed you into collecting evidence he can use to get Jack fired. Hunt down the guys in red shirts and pick up any files they drop.",
+    "is_plot_critical": false,
+    "can_be_failed": false
+  },
+  "GD_Co_Side_RocketSurgery.M_RocketSurgery": {
+    "number": 60,
+    "name": "It Ain't Rocket Surgery",
+    "description": "Doctor Spara wants to build a new, organic, rocket navigation system... out of creature parts.",
+    "is_plot_critical": false,
+    "can_be_failed": false
+  },
+  "GD_Co_Side_TheDon.M_TheDon": {
+    "number": 71,
+    "name": "The Don",
+    "description": "The Don has been playing a bit of snick-it, but his ball has gone out of bounds, somewhere. Find the snick-it ball and bring it back to him.",
+    "is_plot_critical": false,
+    "can_be_failed": true
+  },
+  "GD_Co_Side_TheseAreTheBots.M_TheseAreTheBots": {
+    "number": 72,
+    "name": "These are the Bots",
+    "description": "You've come across a pair of robots that seem to be in distress... at least, as far as you can tell from the incoherent beeping and one-sided conversation.",
+    "is_plot_critical": false,
+    "can_be_failed": false
+  },
+  "GD_Co_Side_Z8MTRP.M_Z8nTRP": {
+    "number": 73,
+    "name": "Z8N-TP",
+    "description": "A CL4P-TP unit named Z8N-TP needs your help in attaining enlightenment. He's asked you to collect each of the different types of Putti, but he hasn't really explained how this will help.",
+    "is_plot_critical": false,
+    "can_be_failed": false
+  },
+  "GD_Co_SpaceSlam.M_SpaceSlam": {
+    "number": 27,
+    "name": "Space Slam",
+    "description": "Can YOU be the moon's next b-ball champion?!",
+    "is_plot_critical": false,
+    "can_be_failed": true
+  },
+  "GD_Co_SubLevel13.M_Co_SubLevel13Part1": {
+    "number": 43,
+    "name": "Sub-Level 13",
+    "description": "Pickle needs your help to find a friend of his, Harry, who has gone into Sub-Level 13 to fetch Pickle a piece of experimental Dahl technology. No big deal, it's just that Sub-Level 13 is rumored to be haunted.",
+    "is_plot_critical": false,
+    "can_be_failed": false
+  },
+  "GD_Co_SubLevel13.M_Co_SubLevel13Part2": {
+    "number": 44,
+    "name": "Sub-Level 13: Part 2",
+    "description": "Pickle asked you to find Harry, who was sent into Sub-Level 13 to find a space-fold inverter. Harry, unfortunately, never made it out alive. You found his body, along with a modified E-GUN, which should help you fend off the ghosts haunting this place.",
+    "is_plot_critical": false,
+    "can_be_failed": false
+  },
+  "GD_Co_TalesFromElpis.M_TalesFromElpis": {
+    "number": 19,
+    "name": "Tales from Elpis",
+    "description": "Springs wrote some kid-friendly stories a while back, but she lost them. Go collect them and give her some notes before she sends them off to a publisher.",
+    "is_plot_critical": false,
+    "can_be_failed": false
+  },
+  "GD_Co_ToArms.M_Co_ToArms": {
+    "number": 30,
+    "name": "To Arms!",
+    "description": "The revolution has begun! The People's Liberation Army could really use your old weapons; common, white-rarity ones will do fine. With your donations, the citizens of [place]Concordia[-place] can look forward to a bright, prosperous future.",
+    "is_plot_critical": false,
+    "can_be_failed": false
+  },
+  "GD_Co_ToroToro.M_ToroToro": {
+    "number": 21,
+    "name": "Torgue-o! Torgue-o!",
+    "description": "Springs has offered to make you a laser gun if you bring her a light reactor, but Mister Torgue of the Torgue Corporation has offered to pay you if you destroy the light reactor instead. Nothing stands in your way from making this serious life-altering decision, except a bunch of kraggons.",
+    "is_plot_critical": false,
+    "can_be_failed": false
+  },
+  "GD_Co_TreasuresofECHO.M_Co_TreasuresofECHO": {
+    "number": 35,
+    "name": "Treasures of ECHO Madre",
+    "description": "Pickle may have found a treasure map (of sorts), but he needs you to do some snooping to find out if it's the real deal. You never know, after all the inevitable bloodshed, you might strike it rich! Then you can retire from Vault Hunting and live out your days in fuzzy pajamas.",
+    "is_plot_critical": false,
+    "can_be_failed": false
+  },
+  "GD_Co_VoiceOver.M_VoiceOver": {
+    "number": 53,
+    "name": "Voice Over",
+    "description": "Some Lost Legion jokers are feeding the Voice of Hyperion some garbage to read. She wants you to get rid of them to preserve her dignity.",
+    "is_plot_critical": false,
+    "can_be_failed": false
+  },
+  "GD_Co_VoyageOfCaptainChef.M_VoyageOfCaptainChef": {
+    "number": 45,
+    "name": "The Voyage of Captain Chef",
+    "description": "Captain Chef says he's on a mission for King Greg to claim this moon. To do so officially he must hoist the flag, and for that he needs your help!",
+    "is_plot_critical": false,
+    "can_be_failed": false
+  },
+  "GD_Co_WhereforeArtThou.M_Co_WhereforeArtThou": {
+    "number": 24,
+    "name": "Wherefore Art Thou?",
+    "description": "Myron's wife Deirdre went missing some days ago. He is frantic that she won't be able to survive outside [place]Concordia[-place], so he has asked you for help in finding her. Myron's a bit of a drama king, though, and tends to misuse flowery sounding quotes from plays.",
+    "is_plot_critical": false,
+    "can_be_failed": false
+  },
+  "GD_Co_WipingSlate.M_WipingSlate": {
+    "number": 42,
+    "name": "Wiping the Slate",
+    "description": "Jack killed the Meriff, but he wants more. He's asked you to remove the Meriff from existence by destroying his hidden ECHO diaries.",
+    "is_plot_critical": false,
+    "can_be_failed": false
+  },
+  "GD_Co_YouAskHowHigh.M_Co_YouAskHowHigh": {
+    "number": 39,
+    "name": "Nothing is Never an Option",
+    "description": "Springs has detected a distress signal coming from somewhere in Cave Canem out in [place]Outlands Spur[-place], and that means there's salvage afoot! Springs has said that she'll pay you for anything interesting you can bring back.",
+    "is_plot_critical": false,
+    "can_be_failed": false
+  },
+  "GD_Co_Zapped.M_Co_Zapped1": {
+    "number": 31,
+    "name": "Zapped 1.0",
+    "description": "You've found a cool laser weapon, grats! It would almost be rude NOT to experiment with it...",
+    "is_plot_critical": false,
+    "can_be_failed": false
+  },
+  "GD_Co_Zapped.M_Co_Zapped2": {
+    "number": 32,
+    "name": "Zapped 2.0",
+    "description": "Springs has gone and made your laser weapon even cooler, literally! Go try it out on some torks, then shatter their worthless frozen hides.",
+    "is_plot_critical": false,
+    "can_be_failed": false
+  },
+  "GD_Co_Zapped.M_Co_Zapped3": {
+    "number": 33,
+    "name": "Zapped 3.0",
+    "description": "Springs is a veritable font of ideas for accessorizing laser weapons. She's added corrosive damage to this one, and she needs you to melt some malfunctioning claptrap face. This should be extremely satisfying.",
+    "is_plot_critical": false,
+    "can_be_failed": false
+  },
+  "gd_cork_allthelittlecreatures.M_AllTheLittleCreatures": {
+    "number": 22,
+    "name": "All the Little Creatures",
+    "description": "The snotty-but-paying-your-wages Cybil, leader of the Liberation Front of Concordia,  needs your help saving ''cuties'' from extinction. Head to the Old Dahl Plant in [place]Stanton's Liver[-place] and clean up the toxic sludge threatening the lovely, gentle creatures.",
+    "is_plot_critical": false,
+    "can_be_failed": false
+  },
+  "GD_Cork_AnotherPickle.M_Cork_AnotherPickle": {
+    "number": 37,
+    "name": "Another Pickle",
+    "description": "Turns out Pickle's got a long-lost sister and he needs you to find her before she gets chewed up and spat out by the unforgiving denizens of Elpis.",
+    "is_plot_critical": false,
+    "can_be_failed": false
+  },
+  "GD_Cork_BackOnSchedule.M_BackOnSchedule": {
+    "number": 61,
+    "name": "Quarantine: Back On Schedule",
+    "description": "Tassiter is tired of the delay in rebuilding the [place]Veins of Helios[-place] and has asked you to evaluate the situation regarding a parasitic infestation. He really seems to feel like you're the best person for the job and has a lot of faith in your abilities. (Not.) First though, you'll have to manually restart the worker bot command station and get some bots to help you. Pfft, like you need supervision.",
+    "is_plot_critical": false,
+    "can_be_failed": true
+  },
+  "GD_Cork_DahlFactory_Plot.M_Cork_DahlFactory_Plot": {
+    "number": 6,
+    "name": "Let's Build a Robot Army",
+    "description": "Jack's got the AI core, now he needs the invincible robot army to go with it. For that, you'll need to re-appropriate the [place]Titan Industrial Facility[-place]. No one is using it anymore anyway.",
+    "is_plot_critical": true,
+    "can_be_failed": false
+  },
+  "GD_Cork_DontGetCocky.M_DontGetCocky": {
+    "number": 66,
+    "name": "Don't Get Cocky",
+    "description": "For some reason, the Hyperion Board of Directors has bestowed upon your venture a shipment of armaments from Pandora. The catch is, you have to make sure it gets here unscathed. Tassiter has given you an access code to a turret defense station. Head to the defense turrets and prepare.",
+    "is_plot_critical": false,
+    "can_be_failed": true
+  },
+  "GD_Cork_Eradicate.M_Eradicate": {
+    "number": 65,
+    "name": "Eradicate!",
+    "description": "Tassiter has some intel on an infested Lost Legion soldier he wants killed, but he wants to do it himself, with his OWN robots. Help him build a killer bot to do his dirty work, and don't you dare say ''measuring contest''.",
+    "is_plot_critical": false,
+    "can_be_failed": false
+  },
+  "GD_Cork_Grinding.M_Cork_Grinding": {
+    "number": 34,
+    "name": "Grinders",
+    "description": "Springs' Grinder has broken down and she needs you to help find some spare parts to fix it. She's given you the location of two Grinder machines out on the moon's surface.",
+    "is_plot_critical": false,
+    "can_be_failed": false
+  },
+  "GD_Cork_HeliosFoothold_Plot.M_Cork_HeliosFoothold": {
+    "number": 7,
+    "name": "Home Sweet Home",
+    "description": "With an army of robot super-soldiers at your back, it's time to retake the Hyperion space station. Prepare to fast travel and arrive in the Eye with appropriate (and entirely figurative) fanfare.",
+    "is_plot_critical": true,
+    "can_be_failed": false
+  },
+  "GD_Cork_InnerHull_Plot.M_Cork_InnerHull": {
+    "number": 9,
+    "name": "Watch Your Step",
+    "description": "In order to reach the [place]Lunar Launching Station[-place], you have to find your way through the partially constructed [place]Veins of Helios[-place].",
+    "is_plot_critical": true,
+    "can_be_failed": false
+  },
+  "GD_Cork_PerfectHibernation.M_PerfectHibernation": {
+    "number": 63,
+    "name": "In Perfect Hibernation",
+    "description": "So as it turns out, Lazlo is the one responsible for releasing the parasites. He may be a cold blooded biological terrorist, but he has a soft spot and he wants you to save his friends from the horrible fate to which he has subjected them.",
+    "is_plot_critical": false,
+    "can_be_failed": false
+  },
+  "GD_Cork_Quarantine.M_Quarantine": {
+    "number": 62,
+    "name": "Quarantine: Infestation",
+    "description": "Tassiter has asked you to evaluate the situation regarding a parasitic infestation in the [place]Veins of Helios[-place]. Head through the maintenance tunnels, get inside the quarantine, evaluate the situation, then do your Vault-Huntery thing and fix it.",
+    "is_plot_critical": false,
+    "can_be_failed": false
+  },
+  "GD_Cork_RandDFacility_Plot.M_Cork_RandDFacility": {
+    "number": 8,
+    "name": "Science and Violence",
+    "description": "You need the help of some scientists to shut down the defenses leading to the [place]Eye of Helios[-place]. Get to the [place]Research and Development[-place] sector -- Gladstone and his team need some good old-fashioned rescuing.",
+    "is_plot_critical": true,
+    "can_be_failed": false
+  },
+  "GD_Cork_Resistors.M_Resistors": {
+    "number": 23,
+    "name": "Recruitment Drive",
+    "description": "Rose Yin, leader of the Concordia People's Front, might be about as forceful as a puppy made of chocolate, but she needs your help to resist oppression. Help her spread the word by putting up posters and trying not to get shot.",
+    "is_plot_critical": false,
+    "can_be_failed": true
+  },
+  "GD_Cork_Rocketeering.M_Rocketeering": {
+    "number": 40,
+    "name": "No Such Thing as a Free Launch",
+    "description": "Cosmo Wishbone is eager to share his musical genius with all of Elpis. All he needs is help to launch his satellite into orbit.",
+    "is_plot_critical": false,
+    "can_be_failed": false
+  },
+  "GD_Cork_TroubleWithSpaceHurps.M_TroubleWithSpaceHurps": {
+    "number": 64,
+    "name": "Trouble with Space Hurps",
+    "description": "Lazlo, the somehow mostly unaffected worker in the quarantined section, has admitted to releasing the parasitic infestation causing everyone in this sector to go mad. Now he wants you to stop it. Head to the bug burrow and pop the boils that spawn the bugs.",
+    "is_plot_critical": false,
+    "can_be_failed": false
+  },
+  "GD_EridianSlaughter.MissionDef.M_EridianSlaughter_Badass": {
+    "number": 105,
+    "name": "Digistructed Madness: The Badass Round",
+    "description": "You have (most likely on purpose) swaggered back in to the Holodome for more holographic shootin' 'n' lootin' action. Proceed inward, and depress the holo-button to begin.",
+    "is_plot_critical": false,
+    "can_be_failed": true
+  },
+  "GD_EridianSlaughter.MissionDef.M_EridianSlaughter01": {
+    "number": 100,
+    "name": "Digistructed Madness: Round 1",
+    "description": "You've stumbled across the Holodome, a holographic projector dimension that is capable of creating a life-like battle simulation. Find the Holodome's overseer and see what's up with this place.",
+    "is_plot_critical": true,
+    "can_be_failed": true
+  },
+  "GD_EridianSlaughter.MissionDef.M_EridianSlaughter02": {
+    "number": 101,
+    "name": "Digistructed Madness: Round 2",
+    "description": "Welcome back to the Holodome, a holographic projector dimension. H010-TP is eager for you to start a new simulation -- he's totally got this this time. Not like last time. THIS time, he's definitely in control of the arena environment. Just hit the holo-button again, and you'll see!",
+    "is_plot_critical": false,
+    "can_be_failed": true
+  },
+  "GD_EridianSlaughter.MissionDef.M_EridianSlaughter03": {
+    "number": 102,
+    "name": "Digistructed Madness: Round 3",
+    "description": "What a joyous return to the Holodome! The holographic projector dimension missed you, that [SHORT/LONG] time you were away. If you're ready for another challenge, the holo-button awaits your [DELICATE/BRUTAL] attention.",
+    "is_plot_critical": false,
+    "can_be_failed": true
+  },
+  "GD_EridianSlaughter.MissionDef.M_EridianSlaughter04": {
+    "number": 103,
+    "name": "Digistructed Madness: Round 4",
+    "description": "Oh look, it's you again. Welcome back to the Holodome, blah blah blah. If you aren't tired of H010-TP's shenanigans, please, enter the holographic projector dimension and once more push the holo-button.",
+    "is_plot_critical": false,
+    "can_be_failed": true
+  },
+  "GD_EridianSlaughter.MissionDef.M_EridianSlaughter05": {
+    "number": 104,
+    "name": "Digistructed Madness: Round 5",
+    "description": "You made it back just in time for the last attempt at a structured round in the Holodome. Head inside and hit that holo-button!",
+    "is_plot_critical": false,
+    "can_be_failed": true
+  },
+  "GD_Ma_Chapter02.M_Ma_Chapter02": {
+    "number": 300,
+    "name": "Enter the Claptrap",
+    "description": "Jack wants you to retrieve a top-secret file from inside Claptrap's mind. You'll be inserted digitally, retrieve the file and get out. Easy enough!",
+    "is_plot_critical": true,
+    "can_be_failed": false
+  },
+  "GD_Ma_Chapter03.M_Ma_Chapter03": {
+    "number": 301,
+    "name": "File Search",
+    "description": "Jack wants you to find a top-secret Hyperion file hidden somewhere inside Claptrap's memories. If you can get it back, he'll pay you. A lot.",
+    "is_plot_critical": true,
+    "can_be_failed": false
+  },
+  "GD_Ma_Chapter05.M_Ma_Chapter05": {
+    "number": 303,
+    "name": "END OF LINE",
+    "description": "5H4D0W-TP has taken the H-Source and escaped down a hole into Claptrap's subconscious. Find a way to follow him.",
+    "is_plot_critical": true,
+    "can_be_failed": false
+  },
+  "GD_Ma_Chapter06.M_Ma_Chapter06": {
+    "number": 304,
+    "name": "System Shutdown",
+    "description": "5H4D0W-TP has proved more cunning and treacherous than you originally thought. He has the H-Source and plans to use it on himself to become a super-duper AI. Only one thing to do -- riddle him with bullets!",
+    "is_plot_critical": true,
+    "can_be_failed": false
+  },
+  "GD_Ma_RightBrainCluster.M_Ma_RightCluster": {
+    "number": 302,
+    "name": "The Psychology of a Claptrap",
+    "description": "The H-Source is buried somewhere in Claptrap's corrupted memories. Jack wants it, so you have to go get it. Simple.",
+    "is_plot_critical": true,
+    "can_be_failed": false
+  },
+  "GD_Ma_Side_BadTrap.M_Ma_Side_BadTrap": {
+    "number": 311,
+    "name": "A Deadlier Game",
+    "description": "You're being challenged to a deadly game of chance. Dare you take the risk?",
+    "is_plot_critical": false,
+    "can_be_failed": false
+  },
+  "GD_Ma_Side_ByteClub.M_Ma_Side_ByteClub": {
+    "number": 312,
+    "name": "Byte Club",
+    "description": "A mysterious yet handsome robot has asked for your help. All you need to do is tell everyone about Byte Club.",
+    "is_plot_critical": false,
+    "can_be_failed": false
+  },
+  "GD_Ma_Side_CookieDataMining.M_Ma_Side_CookieDataMining": {
+    "number": 307,
+    "name": "Chip's Data Mining Adventure",
+    "description": "Chip is a cookie who runs a data mine inside Claptrap's brain. He wants you to find out what's been killing his miners so he can get production started again.",
+    "is_plot_critical": false,
+    "can_be_failed": false
+  },
+  "GD_Ma_Side_EgoTrap.M_Ma_Side_EgoTrap": {
+    "number": 308,
+    "name": "3G0-TP",
+    "description": "3G0-TP has taken a beating recently and needs a pick-me-up in the form of several trophies which mark super-important moments in Claptrap's life.",
+    "is_plot_critical": false,
+    "can_be_failed": false
+  },
+  "GD_Ma_Side_H4X0rz.M_Ma_Side_H4X0rz": {
+    "number": 317,
+    "name": "h4X0rz",
+    "description": "An ECHOMail has arrived with a perfectly safe looking executable attachment. Where better to open it than in Claptrap's Subconscious?",
+    "is_plot_critical": false,
+    "can_be_failed": false
+  },
+  "GD_Ma_Side_H4X0rz.M_Ma_Side_H4X0rz_Repeat": {
+    "number": 318,
+    "name": "l33t h4X0rz",
+    "description": "The cat wants you to dance for its amusement. So dance.",
+    "is_plot_critical": false,
+    "can_be_failed": true
+  },
+  "GD_Ma_Side_IdTrap.M_Ma_Side_IdTrap": {
+    "number": 309,
+    "name": "1D-TP",
+    "description": "1D-TP wants something. Then again, he wants everything.",
+    "is_plot_critical": false,
+    "can_be_failed": false
+  },
+  "GD_Ma_Side_MINAC.M_Ma_Side_MINAC": {
+    "number": 310,
+    "name": "Rose Tinting",
+    "description": "A giant freaking death machine called MINAC wants your help to soften his image so he can be integrated as a happy memory.",
+    "is_plot_critical": false,
+    "can_be_failed": false
+  },
+  "GD_Ma_Side_ShredOfDignity.M_Ma_Side_ShredOfDignity": {
+    "number": 305,
+    "name": "Corrosion of Dignity",
+    "description": "A solemn but stately robot by the name of D1GN1TY-TP has asked you for help extracting him from his current predicament i.e. being alive.",
+    "is_plot_critical": false,
+    "can_be_failed": false
+  },
+  "GD_Ma_Side_SpywareInFromCold.M_Ma_Side_SpywareInFromCold": {
+    "number": 306,
+    "name": "Spyware Who Came in from the Cold",
+    "description": "A mysterious figure gestures to you from the shadows. What could it want? And why does it smell like vodka? Pay her and find out the score.",
+    "is_plot_critical": false,
+    "can_be_failed": false
+  },
+  "GD_Ma_Side_StopTheMusic.M_Ma_Side_StopTheMusic": {
+    "number": 313,
+    "name": "You Can Stop the Music",
+    "description": "There's a terrible tune haunting Claptrap's Consciousness, he wants you to find it and delete it.",
+    "is_plot_critical": false,
+    "can_be_failed": false
+  },
+  "GD_Ma_Side_SumOfSomeFears.M_Ma_Side_SumOfSomeFears": {
+    "number": 314,
+    "name": "The Sum of Some Fears",
+    "description": "A crazy Jack-in-the-Box has challenged you to experience Claptrap's deepest fear -- if you dare!",
+    "is_plot_critical": false,
+    "can_be_failed": false
+  },
+  "GD_Ma_Side_SuperEgoTrap.M_Ma_Side_SuperEgoTrap": {
+    "number": 315,
+    "name": "5UP4-3G0-TP",
+    "description": "The caped computer, 5UP4-3G0-TP has asked for your help in defeating the evil Rex Loader and his minions, to rescue the lovely Damsel DeStress!",
+    "is_plot_critical": false,
+    "can_be_failed": false
+  },
+  "GD_Ma_Side_TempleOfBoom.M_Ma_Side_TempleofBoom": {
+    "number": 316,
+    "name": "The Temple of Boom",
+    "description": "Patricia Tannis -- or a reasonable facsimile of her -- has requested your help in recovering an ancient artifact belonging to a long-dead cvilization.",
+    "is_plot_critical": false,
+    "can_be_failed": false
+  },
+  "GD_SparkMissions.SparkMissionAlpha": {
+    "number": 15,
+    "is_plot_critical": false,
+    "can_be_failed": false
+  },
+  "GD_SparkMissions.SparkMissionBeta": {
+    "number": 14,
+    "is_plot_critical": false,
+    "can_be_failed": false
+  },
+  "GD_SparkMissions.SparkMissionDelta": {
+    "number": 13,
+    "is_plot_critical": false,
+    "can_be_failed": false
+  },
+  "GD_SparkMissions.SparkMissionGamma": {
+    "number": 12,
+    "is_plot_critical": false,
+    "can_be_failed": false
+  }
+}

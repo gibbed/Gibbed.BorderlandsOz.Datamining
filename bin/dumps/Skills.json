@@ -1,0 +1,1158 @@
+﻿{
+  "Crocus_Baroness_Servant.Skills.ABackhandToRemember": {
+    "name": "A Backhand to Remember",
+    "description": "[skill]Melee Override[-skill]. Press <StringAliasMap:Action.Melee> to perform a [skill]Backhand to Remember[-skill]. Backhanded enemies are [skill]knocked back[-skill] and suffer [skill]Cryo Damage[-skill]. Backhanding enemies highly motivates you and your allies, granting increased [skill]Movement Speed[-skill] and [skill]Reload Speed[-skill] for a short time. This ability has a cooldown. Backhands from multiple players have diminishing returns with their bonuses.",
+    "default_starting_grade": 0,
+    "max_grade": 1,
+    "player_level_requirement": 0,
+    "icon_texture_name": "SkillIcon-Backhand_to_Remember"
+  },
+  "Crocus_Baroness_Servant.Skills.ABackhandToRemember_Active": {
+    "name": "A Backhand to Remember - Active",
+    "default_starting_grade": 0,
+    "max_grade": 1,
+    "player_level_requirement": 0,
+    "icon_texture_name": "SkillIcon-Backhand_to_Remember"
+  },
+  "Crocus_Baroness_Servant.Skills.ABackhandToRemember_Cooldown": {
+    "name": "A Backhand to Remember- Feedback",
+    "default_starting_grade": 0,
+    "max_grade": 1,
+    "player_level_requirement": 0,
+    "icon_texture_name": "SkillIcon-Backhand_to_Remember"
+  },
+  "Crocus_Baroness_Servant.Skills.ABackhandToRemember_Motivate": {
+    "name": "A Backhand to Remember- Motivation",
+    "default_starting_grade": 0,
+    "max_grade": 1,
+    "player_level_requirement": 0,
+    "icon_texture_name": "SkillIcon-Backhand_to_Remember"
+  },
+  "Crocus_Baroness_Servant.Skills.AllGloryToTheMaster_DamagedByServant": {
+    "name": "All Glory to the Master - Damaged by Servant",
+    "default_starting_grade": 0,
+    "max_grade": 12,
+    "player_level_requirement": 0,
+    "icon_texture_name": "SkillIcon-All_Glory"
+  },
+  "Crocus_Baroness_Servant.Skills.ContractualObligations": {
+    "name": "Contractual Obligations",
+    "description": "<font size=\"15\">Hold <StringAliasMap:Action.Melee> to [skill]present a Contract[-skill] to allies. If an ally signs the [skill]Contract[-skill] by [skill]melee attacking you[-skill] then they become your [skill]Servant[-skill] and you become their [skill]Master[-skill]. You deal increased [skill]Gun Damage[-skill] and your [skill]Servant[-skill] gains increased [skill]Shield Capacity[-skill] while your [skill]Contract[-skill] is in effect.<br><br>This [skill]Contract[-skill] is terminated only upon the death of either party. You may only be involved in a single [skill]Contract[-skill] at a time, and may not offer a new [skill]Contract[-skill] while bound by a pre-existing [skill]Contract[-skill].</font>",
+    "default_starting_grade": 0,
+    "max_grade": 1,
+    "player_level_requirement": 0,
+    "icon_texture_name": "SkillIcon-Indentured_Servitude"
+  },
+  "Crocus_Baroness_Servant.Skills.ContractualObligations_Cooldown": {
+    "name": "Contractual Obligations - Cooldown",
+    "default_starting_grade": 0,
+    "max_grade": 1,
+    "player_level_requirement": 0,
+    "icon_texture_name": "SkillIcon-Indentured_Servitude"
+  },
+  "Crocus_Baroness_Servant.Skills.ContractualObligations_EndTheContract": {
+    "name": "Contractual Obligations - End the Contract",
+    "default_starting_grade": 0,
+    "max_grade": 1,
+    "player_level_requirement": 0,
+    "icon_texture_name": "SkillIcon-Indentured_Servitude"
+  },
+  "Crocus_Baroness_Servant.Skills.ContractualObligations_Master": {
+    "name": "Contractual Obligations - Master",
+    "default_starting_grade": 0,
+    "max_grade": 1,
+    "player_level_requirement": 0,
+    "icon_texture_name": "SkillIcon-Indentured_Servitude"
+  },
+  "Crocus_Baroness_Servant.Skills.ContractualObligations_PresentContract": {
+    "name": "Contractual Obligations - Present Contract",
+    "default_starting_grade": 0,
+    "max_grade": 1,
+    "player_level_requirement": 0,
+    "icon_texture_name": "SkillIcon-Indentured_Servitude"
+  },
+  "Crocus_Baroness_Servant.Skills.ContractualObligations_Servant": {
+    "name": "Contractual Obligations - Servant",
+    "default_starting_grade": 0,
+    "max_grade": 1,
+    "player_level_requirement": 0,
+    "icon_texture_name": "SkillIcon-Indentured_Servitude"
+  },
+  "Crocus_Baroness_Servant.Skills.ExcellentShotMadam_Marked": {
+    "name": "Excellent Shot, Madam - Marked",
+    "default_starting_grade": 0,
+    "max_grade": 12,
+    "player_level_requirement": 0,
+    "icon_texture_name": "SkillIcon-Excellent_Shot_Madame"
+  },
+  "Crocus_Baroness_Servant.Skills.SaveTheQueen_Marked": {
+    "name": "Save The Queen - Marked",
+    "default_starting_grade": 0,
+    "max_grade": 12,
+    "player_level_requirement": 0,
+    "icon_texture_name": "SkillIcon-Save_the_Queen"
+  },
+  "Crocus_Baroness_Servant.Skills.Valet": {
+    "name": "Valet",
+    "description": "When your [skill]Servant[-skill] kills an enemy, you gain a stack of [skill]Valet[-skill]. You and your [skill]Servant[-skill] gain increased [skill]Reload Speed[-skill] for each stack of [skill]Valet[-skill]. All stacks of [skill]Valet[-skill] are lost upon termination of your [skill]Contract[-skill]. [skill]Valet[-skill] does nothing when you do not have a [skill]Servant[-skill].",
+    "default_starting_grade": 0,
+    "max_grade": 2,
+    "player_level_requirement": 0,
+    "icon_texture_name": "SkillIcon-Valet"
+  },
+  "Crocus_Baroness_Servant.Skills.Valet_Active": {
+    "name": "Valet - Active",
+    "default_starting_grade": 0,
+    "max_grade": 2,
+    "player_level_requirement": 0,
+    "icon_texture_name": "SkillIcon-Valet"
+  },
+  "Crocus_ClassMods.Skills.Skill_CelestialBaroness": {
+    "name": "Skill - Celestial Baroness",
+    "default_starting_grade": 0,
+    "max_grade": 12,
+    "player_level_requirement": 0,
+    "icon_texture_name": "None"
+  },
+  "GD_Bleed.Skills.Skill_BleedEffects": {
+    "name": "Bleed status",
+    "default_starting_grade": 0,
+    "max_grade": 12,
+    "player_level_requirement": 0,
+    "icon_texture_name": "None"
+  },
+  "GD_BuffDrinks.Skill.Skill_BuffDrink_HealingRegen": {
+    "name": "Buff Drink - Healing",
+    "default_starting_grade": 0,
+    "max_grade": 12,
+    "player_level_requirement": 0,
+    "icon_texture_name": "None"
+  },
+  "GD_BuffDrinks.Skill.Skill_BuffDrink_Toughness": {
+    "name": "Buff Drink - Toughness",
+    "default_starting_grade": 0,
+    "max_grade": 12,
+    "player_level_requirement": 0,
+    "icon_texture_name": "None"
+  },
+  "GD_Challenges.BadassSkill.BadassSkill": {
+    "name": "Badassitutide",
+    "default_starting_grade": 0,
+    "max_grade": 12,
+    "player_level_requirement": 0,
+    "icon_texture_name": "None"
+  },
+  "GD_Cork_ClassMods_SMJ.Misc.Skill_LegendaryEnforcer": {
+    "name": "Legendary Enforcer",
+    "default_starting_grade": 0,
+    "max_grade": 12,
+    "player_level_requirement": 0,
+    "icon_texture_name": "None"
+  },
+  "GD_Cork_ClassMods_SMJ.Misc.Skill_LegendaryGladiator": {
+    "name": "Legendary Gladiator",
+    "default_starting_grade": 0,
+    "max_grade": 12,
+    "player_level_requirement": 0,
+    "icon_texture_name": "None"
+  },
+  "GD_Cork_MoonBoots.Skills.Skill_InVacuum_AudioEffect": {
+    "default_starting_grade": 0,
+    "max_grade": 12,
+    "player_level_requirement": 0,
+    "icon_texture_name": "None"
+  },
+  "GD_Cork_MoonBoots.Skills.Skill_InVacuum_StatusEffect": {
+    "default_starting_grade": 0,
+    "max_grade": 12,
+    "player_level_requirement": 0,
+    "icon_texture_name": "None"
+  },
+  "GD_Cork_Shields.Skills.Nova_Shield_Skill_Ice": {
+    "name": "Ice Nova Shield Skill",
+    "default_starting_grade": 0,
+    "max_grade": 12,
+    "player_level_requirement": 0,
+    "icon_texture_name": "None"
+  },
+  "GD_Cork_Shields.Skills.Spike_Shield_Skill_Ice": {
+    "name": "Spike Shield Skill - Ice",
+    "default_starting_grade": 0,
+    "max_grade": 12,
+    "player_level_requirement": 0,
+    "icon_texture_name": "None"
+  },
+  "GD_Cork_Weap_Lasers.Skills.Skill_Excalibastard": {
+    "name": "Excalibastard Skill",
+    "default_starting_grade": 0,
+    "max_grade": 12,
+    "player_level_requirement": 0,
+    "icon_texture_name": "None"
+  },
+  "GD_Cork_Weap_Lasers.Skills.Skill_LightSaberDeflection": {
+    "name": "Light Saber Bullet Reflect",
+    "default_starting_grade": 0,
+    "max_grade": 12,
+    "player_level_requirement": 0,
+    "icon_texture_name": "None"
+  },
+  "GD_Cork_Weap_Lasers.Skills.Skill_Vibrapulse": {
+    "name": "Vibra-Pulse",
+    "default_starting_grade": 0,
+    "max_grade": 12,
+    "player_level_requirement": 0,
+    "icon_texture_name": "None"
+  },
+  "GD_Cork_Weap_Lasers.Skills.Skill_ZX1": {
+    "name": "ZF1 Skill",
+    "default_starting_grade": 0,
+    "max_grade": 12,
+    "player_level_requirement": 0,
+    "icon_texture_name": "None"
+  },
+  "GD_Cork_Weap_Shotgun.Skills.Skill_Boganella": {
+    "name": "Talking Gun Skill",
+    "default_starting_grade": 0,
+    "max_grade": 12,
+    "player_level_requirement": 0,
+    "icon_texture_name": "None"
+  },
+  "GD_Cork_Weap_SMG.Skills.MareksMouth": {
+    "name": "Mareks Mouth",
+    "default_starting_grade": 0,
+    "max_grade": 12,
+    "player_level_requirement": 0,
+    "icon_texture_name": "None"
+  },
+  "GD_Corrosive.Skills.Skill_CorrosiveEffects": {
+    "name": "Corrosive status",
+    "default_starting_grade": 0,
+    "max_grade": 12,
+    "player_level_requirement": 0,
+    "icon_texture_name": "None"
+  },
+  "GD_Gladiator_Skills.Xiphos.Bladesurge_Cooldown": {
+    "name": "Bladesurge CD",
+    "default_starting_grade": 0,
+    "max_grade": 1,
+    "player_level_requirement": 0,
+    "icon_texture_name": "SkillIcon-Bloodrush"
+  },
+  "GD_Gladiator_Skills.Xiphos.Bloodlust": {
+    "name": "Bloodlust",
+    "description": "Grants [skill]Health Regeneration[-skill] whenever you make an enemy [skill]Bleed[-skill], for the duration of the [skill]Bleed[-skill] effect. This effect stacks if you have multiple [skill]Bleeding[-skill] enemies.",
+    "default_starting_grade": 0,
+    "max_grade": 5,
+    "player_level_requirement": 0,
+    "icon_texture_name": "SkillIcon-Bloodlust"
+  },
+  "GD_Gladiator_Skills.Xiphos.Bloodlust_Active": {
+    "default_starting_grade": 0,
+    "max_grade": 1,
+    "player_level_requirement": 0,
+    "icon_texture_name": "SkillIcon-Bloodlust"
+  },
+  "GD_Gladiator_Skills.Xiphos.Epicenter": {
+    "name": "Epicenter",
+    "description": "[skill]Slam Alteration Skill[-skill]. When you [skill]Slam[-skill] you now create a singularity, [skill]pulling nearby enemies closer[-skill] and dealing [skill]damage[-skill] to them.",
+    "default_starting_grade": 0,
+    "max_grade": 1,
+    "player_level_requirement": 0,
+    "icon_texture_name": "SkillIcon-Epicenter"
+  },
+  "GD_Gladiator_Skills.Xiphos.FuryOfTheArena": {
+    "name": "Fury of the Arena",
+    "description": "Grants increased [skill]Fire Rate[-skill] and [skill]Reload Speed[-skill] for each [skill]Bleeding[-skill] target.",
+    "default_starting_grade": 0,
+    "max_grade": 5,
+    "player_level_requirement": 0,
+    "icon_texture_name": "SkillIcon-Fury_Of_The_Arena"
+  },
+  "GD_Gladiator_Skills.Xiphos.FuryOfTheArena_Active": {
+    "default_starting_grade": 0,
+    "max_grade": 1,
+    "player_level_requirement": 0,
+    "icon_texture_name": "SkillIcon-Fury_Of_The_Arena"
+  },
+  "GD_Gladiator_Skills.Xiphos.Rend": {
+    "name": "Rend",
+    "description": "Your [skill]melee attacks[-skill] cause enemies to [skill]Bleed[-skill], inflicting damage over time. [skill]Bleed[-skill] damage benefits from bonuses to [skill]Melee Damage[-skill], and deals more damage to enemies with [skill]higher health[-skill].",
+    "default_starting_grade": 0,
+    "max_grade": 1,
+    "player_level_requirement": 0,
+    "icon_texture_name": "SkillIcon-Rend"
+  },
+  "GD_Gladiator_Skills.Xiphos.Rend_Feedback": {
+    "name": "Rend count",
+    "default_starting_grade": 0,
+    "max_grade": 1,
+    "player_level_requirement": 0,
+    "icon_texture_name": "SkillIcon-Rend"
+  },
+  "GD_Gladiator_Skills.Xiphos.YouveGotRedonYou": {
+    "name": "You've Got Red on You",
+    "description": "When an enemy is killed by your [skill]melee attacks[-skill], or dies while [skill]Bleeding[-skill], they [skill]explode[-skill], dealing damage to nearby enemies (as well as grossing them out).",
+    "default_starting_grade": 0,
+    "max_grade": 5,
+    "player_level_requirement": 0,
+    "icon_texture_name": "SkillIcon-Got_Red_On_You"
+  },
+  "GD_HealthDrops.Skills.BoosterShieldPickup_Skill": {
+    "name": "Booster Shield Pickup",
+    "default_starting_grade": 0,
+    "max_grade": 12,
+    "player_level_requirement": 0,
+    "icon_texture_name": "None"
+  },
+  "GD_Ice.Skills.Skill_IceEffects": {
+    "name": "Ice status",
+    "default_starting_grade": 0,
+    "max_grade": 12,
+    "player_level_requirement": 0,
+    "icon_texture_name": "None"
+  },
+  "GD_Incendiary.Skills.Skill_IncendiaryEffects": {
+    "name": "Incendiary status",
+    "default_starting_grade": 0,
+    "max_grade": 12,
+    "player_level_requirement": 0,
+    "icon_texture_name": "None"
+  },
+  "GD_Incendiary.Skills.Skill_IncendiaryEffects_OxygenDebuff": {
+    "name": "Incendiary status increased oxygen consumption",
+    "default_starting_grade": 0,
+    "max_grade": 12,
+    "player_level_requirement": 0,
+    "icon_texture_name": "None"
+  },
+  "GD_Lawbringer.injured.LawbringerInjuredDefinition.Behavior_AttributeEffect_2.SkillDefinition_1": {
+    "name": "Power Boost",
+    "default_starting_grade": 0,
+    "max_grade": 12,
+    "player_level_requirement": 0,
+    "icon_texture_name": "None"
+  },
+  "GD_Lawbringer.injured.LawbringerInjuredDefinition.Behavior_AttributeEffect_5.SkillDefinition_2": {
+    "description": "Defense Boost",
+    "default_starting_grade": 0,
+    "max_grade": 12,
+    "player_level_requirement": 0,
+    "icon_texture_name": "None"
+  },
+  "GD_Ma_GrenadeMods.Skills.Skill_DataScrubber_Regen": {
+    "name": "DataScrubber Shield Regen",
+    "default_starting_grade": 0,
+    "max_grade": 12,
+    "player_level_requirement": 0,
+    "icon_texture_name": "None"
+  },
+  "GD_Ma_Shields.Skills.Chimera_Shield_Skill_M0RQ": {
+    "name": "Chimera Shield Skill",
+    "default_starting_grade": 0,
+    "max_grade": 12,
+    "player_level_requirement": 0,
+    "icon_texture_name": "None"
+  },
+  "GD_Ma_Shields.Skills.Chimera_Shield_Skill_M0RQ_Goodbye": {
+    "default_starting_grade": 0,
+    "max_grade": 12,
+    "player_level_requirement": 0,
+    "icon_texture_name": "None"
+  },
+  "GD_Ma_Shields.Skills.Impact_Shield_Skill_Rerouter": {
+    "name": "Impact Shield Skill",
+    "default_starting_grade": 0,
+    "max_grade": 12,
+    "player_level_requirement": 0,
+    "icon_texture_name": "None"
+  },
+  "GD_Ma_Shields.Skills.Impact_Shield_Skill_Rerouter_Regen": {
+    "name": "Impact Shield Skill Regen",
+    "default_starting_grade": 0,
+    "max_grade": 12,
+    "player_level_requirement": 0,
+    "icon_texture_name": "None"
+  },
+  "GD_Ma_Weapons.Skills.Glitch_Amp": {
+    "name": "Gitch - Amp",
+    "description": "Amp glitch skill",
+    "default_starting_grade": 0,
+    "max_grade": 12,
+    "player_level_requirement": 0,
+    "icon_texture_name": "None"
+  },
+  "GD_Ma_Weapons.Skills.Glitch_Controller": {
+    "name": "Glitch Controller",
+    "description": "Decides when/how to glitch",
+    "default_starting_grade": 0,
+    "max_grade": 1,
+    "player_level_requirement": 0,
+    "icon_texture_name": "None"
+  },
+  "GD_Ma_Weapons.Skills.Glitch_Loop": {
+    "name": "Glitch - Loop",
+    "description": "Loop glitch skill",
+    "default_starting_grade": 0,
+    "max_grade": 1,
+    "player_level_requirement": 0,
+    "icon_texture_name": "None"
+  },
+  "GD_Ma_Weapons.Skills.Glitch_Loop_Burst": {
+    "name": "Glitch - Loop SR",
+    "description": "Loop glitch skill",
+    "default_starting_grade": 0,
+    "max_grade": 1,
+    "player_level_requirement": 0,
+    "icon_texture_name": "None"
+  },
+  "GD_Ma_Weapons.Skills.Glitch_Multishot": {
+    "name": "Glitch - Multishot",
+    "default_starting_grade": 0,
+    "max_grade": 1,
+    "player_level_requirement": 0,
+    "icon_texture_name": "None"
+  },
+  "GD_Ma_Weapons.Skills.Glitch_Multishot_Laser_Hyperion": {
+    "name": "Glitch - Multishot",
+    "default_starting_grade": 0,
+    "max_grade": 1,
+    "player_level_requirement": 0,
+    "icon_texture_name": "None"
+  },
+  "GD_Ma_Weapons.Skills.Glitch_Multishot_Laser_Maliwan": {
+    "name": "Glitch - Multishot",
+    "default_starting_grade": 0,
+    "max_grade": 1,
+    "player_level_requirement": 0,
+    "icon_texture_name": "None"
+  },
+  "GD_Ma_Weapons.Skills.Glitch_Multishot_RL": {
+    "name": "Glitch - Multishot RL",
+    "default_starting_grade": 0,
+    "max_grade": 1,
+    "player_level_requirement": 0,
+    "icon_texture_name": "None"
+  },
+  "GD_Ma_Weapons.Skills.Glitch_Multishot_SG": {
+    "name": "Glitch - Multishot",
+    "default_starting_grade": 0,
+    "max_grade": 1,
+    "player_level_requirement": 0,
+    "icon_texture_name": "None"
+  },
+  "GD_Ma_Weapons.Skills.Glitch_Multishot_SR": {
+    "name": "Glitch - Multishot SR",
+    "default_starting_grade": 0,
+    "max_grade": 1,
+    "player_level_requirement": 0,
+    "icon_texture_name": "None"
+  },
+  "GD_Ma_Weapons.Skills.Glitch_Overload": {
+    "name": "Glitch - Overload",
+    "default_starting_grade": 0,
+    "max_grade": 1,
+    "player_level_requirement": 0,
+    "icon_texture_name": "None"
+  },
+  "GD_Ma_Weapons.Skills.Glitch_Overload_Laser_Maliwan": {
+    "name": "Glitch - Overload",
+    "default_starting_grade": 0,
+    "max_grade": 1,
+    "player_level_requirement": 0,
+    "icon_texture_name": "None"
+  },
+  "GD_Ma_Weapons.Skills.Glitch_Overload_RL": {
+    "name": "Glitch - Overload RL",
+    "default_starting_grade": 0,
+    "max_grade": 1,
+    "player_level_requirement": 0,
+    "icon_texture_name": "None"
+  },
+  "GD_Ma_Weapons.Skills.Glitch_Overload_SG": {
+    "name": "Glitch - Overload",
+    "default_starting_grade": 0,
+    "max_grade": 1,
+    "player_level_requirement": 0,
+    "icon_texture_name": "None"
+  },
+  "GD_Ma_Weapons.Skills.Glitch_Overload_SR": {
+    "name": "Glitch - Overload",
+    "default_starting_grade": 0,
+    "max_grade": 1,
+    "player_level_requirement": 0,
+    "icon_texture_name": "None"
+  },
+  "GD_Ma_Weapons.Skills.Skill_CutieKiller": {
+    "name": "Talking Gun Skill",
+    "default_starting_grade": 0,
+    "max_grade": 12,
+    "player_level_requirement": 0,
+    "icon_texture_name": "None"
+  },
+  "GD_Ma_Weapons.Skills.Skill_Expander": {
+    "name": "Expander",
+    "default_starting_grade": 0,
+    "max_grade": 12,
+    "player_level_requirement": 0,
+    "icon_texture_name": "None"
+  },
+  "GD_Ma_Weapons.Skills.Skill_Flayer": {
+    "name": "Flayer",
+    "default_starting_grade": 0,
+    "max_grade": 12,
+    "player_level_requirement": 0,
+    "icon_texture_name": "None"
+  },
+  "GD_Ma_Weapons.Skills.Skill_Legendary_CheatCode": {
+    "name": "Legendary Cheat Code SKill",
+    "default_starting_grade": 0,
+    "max_grade": 1,
+    "player_level_requirement": 0,
+    "icon_texture_name": "None"
+  },
+  "GD_Ma_Weapons.Skills.Skill_Legendary_LongestYard": {
+    "name": "Legendary Longest Yard SKill",
+    "default_starting_grade": 0,
+    "max_grade": 1,
+    "player_level_requirement": 0,
+    "icon_texture_name": "None"
+  },
+  "GD_Ma_Weapons.Skills.Skill_Legendary_LuckCannon": {
+    "name": "Legendary Longest Yard SKill",
+    "default_starting_grade": 0,
+    "max_grade": 1,
+    "player_level_requirement": 0,
+    "icon_texture_name": "None"
+  },
+  "GD_Ma_Weapons.Skills.Skill_Splodger": {
+    "name": "Talking Gun Skill",
+    "default_starting_grade": 0,
+    "max_grade": 12,
+    "player_level_requirement": 0,
+    "icon_texture_name": "None"
+  },
+  "GD_MoonItems.Skills.AckAck": {
+    "name": "Anti Air Fire Rate Boost",
+    "default_starting_grade": 0,
+    "max_grade": 12,
+    "player_level_requirement": 0,
+    "icon_texture_name": "None"
+  },
+  "GD_MoonItems.Skills.AckAck_Active": {
+    "name": "Ack Ack Active",
+    "default_starting_grade": 0,
+    "max_grade": 12,
+    "player_level_requirement": 0,
+    "icon_texture_name": "None"
+  },
+  "GD_MoonItems.Skills.Acrobat_Speed_Burst": {
+    "name": "Acrobat Speed Skill",
+    "default_starting_grade": 0,
+    "max_grade": 12,
+    "player_level_requirement": 0,
+    "icon_texture_name": "None"
+  },
+  "GD_MoonItems.Skills.AntiAir_FireRate_Boost": {
+    "name": "Anti Air Fire Rate Boost",
+    "default_starting_grade": 0,
+    "max_grade": 12,
+    "player_level_requirement": 0,
+    "icon_texture_name": "None"
+  },
+  "GD_MoonItems.Skills.AntiAir_FireRate_Boost_Active": {
+    "name": "Anti Air Fire Rate Boost Active",
+    "default_starting_grade": 0,
+    "max_grade": 12,
+    "player_level_requirement": 0,
+    "icon_texture_name": "None"
+  },
+  "GD_MoonItems.Skills.AntiAir_Perdy": {
+    "name": "Anti Air PerdyLights",
+    "default_starting_grade": 0,
+    "max_grade": 12,
+    "player_level_requirement": 0,
+    "icon_texture_name": "None"
+  },
+  "GD_MoonItems.Skills.Astrotech": {
+    "name": "Astrotech Skill",
+    "default_starting_grade": 0,
+    "max_grade": 12,
+    "player_level_requirement": 0,
+    "icon_texture_name": "None"
+  },
+  "GD_MoonItems.Skills.Astrotech_Cooldown": {
+    "name": "Astrotech Skill Cooldown",
+    "default_starting_grade": 0,
+    "max_grade": 12,
+    "player_level_requirement": 0,
+    "icon_texture_name": "None"
+  },
+  "GD_MoonItems.Skills.Astrotech_OxygenRegen": {
+    "name": "Astrotech Oxygen Regen",
+    "default_starting_grade": 0,
+    "max_grade": 1,
+    "player_level_requirement": 0,
+    "icon_texture_name": "None"
+  },
+  "GD_MoonItems.Skills.Astrotech_ShieldRegen": {
+    "name": "Astrotech Shield Regen",
+    "default_starting_grade": 0,
+    "max_grade": 1,
+    "player_level_requirement": 0,
+    "icon_texture_name": "None"
+  },
+  "GD_MoonItems.Skills.BombingRun_Grenade_Regen": {
+    "name": "Bombing Run Grenade Regen Skill",
+    "default_starting_grade": 0,
+    "max_grade": 12,
+    "player_level_requirement": 0,
+    "icon_texture_name": "None"
+  },
+  "GD_MoonItems.Skills.HyperventilatorBuff": {
+    "name": "LowOxygenDamageBuff",
+    "default_starting_grade": 0,
+    "max_grade": 12,
+    "player_level_requirement": 0,
+    "icon_texture_name": "None"
+  },
+  "GD_MoonItems.Skills.Invigoration": {
+    "name": "Invigoration Pickup Boost",
+    "default_starting_grade": 0,
+    "max_grade": 12,
+    "player_level_requirement": 0,
+    "icon_texture_name": "None"
+  },
+  "GD_MoonItems.Skills.MoonlightSaga": {
+    "name": "Moonlight Saga Sparkles",
+    "default_starting_grade": 0,
+    "max_grade": 12,
+    "player_level_requirement": 0,
+    "icon_texture_name": "None"
+  },
+  "GD_MoonItems.Skills.Oxidizer": {
+    "name": "Fire Nova Shield Skill",
+    "default_starting_grade": 0,
+    "max_grade": 12,
+    "player_level_requirement": 0,
+    "icon_texture_name": "None"
+  },
+  "GD_MoonItems.Skills.Skill_MoonItemEffects": {
+    "default_starting_grade": 0,
+    "max_grade": 12,
+    "player_level_requirement": 0,
+    "icon_texture_name": "None"
+  },
+  "GD_MoonItems.Skills.SupportRelay": {
+    "name": "Support Relay Skill",
+    "default_starting_grade": 0,
+    "max_grade": 12,
+    "player_level_requirement": 0,
+    "icon_texture_name": "None"
+  },
+  "GD_MoonItems.Skills.SystemsPurge": {
+    "name": "Systems Purge Skill",
+    "default_starting_grade": 0,
+    "max_grade": 12,
+    "player_level_requirement": 0,
+    "icon_texture_name": "None"
+  },
+  "GD_MoonItems.Skills.TranquilityBuff": {
+    "name": "OxygenDamageBuff",
+    "default_starting_grade": 0,
+    "max_grade": 12,
+    "player_level_requirement": 0,
+    "icon_texture_name": "None"
+  },
+  "GD_Petunia_Weapons.Skills.Skill_CryBaby_Rage": {
+    "name": "Cry Baby - Rage",
+    "default_starting_grade": 0,
+    "max_grade": 12,
+    "player_level_requirement": 0,
+    "icon_texture_name": "None"
+  },
+  "GD_Petunia_Weapons.Skills.Skill_Plunkett_Ammo": {
+    "name": "Weapon - Plunkett",
+    "default_starting_grade": 0,
+    "max_grade": 12,
+    "player_level_requirement": 0,
+    "icon_texture_name": "None"
+  },
+  "GD_PlayerShared.Behaviors.PlayerBehavior_LevelUp.Behavior_AttributeEffect_1.SkillDefinition_1": {
+    "default_starting_grade": 1,
+    "max_grade": 12,
+    "player_level_requirement": 0,
+    "icon_texture_name": "None"
+  },
+  "GD_PlayerShared.Behaviors.PlayerBehavior_LevelUp.Behavior_AttributeEffect_2.SkillDefinition_3": {
+    "default_starting_grade": 1,
+    "max_grade": 12,
+    "player_level_requirement": 0,
+    "icon_texture_name": "None"
+  },
+  "GD_PlayerShared.Behaviors.PlayerBehavior_LevelUp.Behavior_AttributeEffect_4.SkillDefinition_3": {
+    "default_starting_grade": 1,
+    "max_grade": 12,
+    "player_level_requirement": 0,
+    "icon_texture_name": "None"
+  },
+  "GD_PlayerShared.Behaviors.PlayerBehavior_LevelUpNaturally.Behavior_AttributeEffect_2.SkillDefinition_2": {
+    "default_starting_grade": 1,
+    "max_grade": 12,
+    "player_level_requirement": 0,
+    "icon_texture_name": "None"
+  },
+  "GD_PlayerShared.injured.PlayerInjuredDefinition.Behavior_AttributeEffect_2.SkillDefinition_1": {
+    "name": "Power Boost",
+    "default_starting_grade": 0,
+    "max_grade": 12,
+    "player_level_requirement": 0,
+    "icon_texture_name": "None"
+  },
+  "GD_PlayerShared.injured.PlayerInjuredDefinition.Behavior_AttributeEffect_5.SkillDefinition_2": {
+    "description": "Defense Boost",
+    "default_starting_grade": 0,
+    "max_grade": 12,
+    "player_level_requirement": 0,
+    "icon_texture_name": "None"
+  },
+  "GD_Prototype.injured.PrototypeInjuredDefinition.Behavior_AttributeEffect_2.SkillDefinition_1": {
+    "name": "Power Boost",
+    "default_starting_grade": 0,
+    "max_grade": 12,
+    "player_level_requirement": 0,
+    "icon_texture_name": "None"
+  },
+  "GD_Prototype.injured.PrototypeInjuredDefinition.Behavior_AttributeEffect_5.SkillDefinition_2": {
+    "description": "Defense Boost",
+    "default_starting_grade": 0,
+    "max_grade": 12,
+    "player_level_requirement": 0,
+    "icon_texture_name": "None"
+  },
+  "GD_Prototype_ActionSkill.ActionPackages.ActionPackage_Funzerker": {
+    "name": "Funzerker",
+    "description": "Can't. Stop. FIRING!",
+    "default_starting_grade": 0,
+    "max_grade": 0,
+    "player_level_requirement": 0,
+    "icon_texture_name": "None"
+  },
+  "GD_Prototype_Skills.Boomtrap.IAmRubberYouAreGlue": {
+    "name": "I Am Rubber, You Are Glue",
+    "description": "[skill]Kill Skill[-skill]. Whenever you kill an enemy, bullets have a chance to [skill]reflect[-skill] off you and towards enemies for a short time. Also, unlocks <font color=\"#ff6600\">ACTION PACKAGE</font> [skill]Torgue Fiesta[-skill].",
+    "default_starting_grade": 0,
+    "max_grade": 1,
+    "player_level_requirement": 0,
+    "icon_texture_name": "SkillIcon-IamRubberYouareGlue"
+  },
+  "GD_Prototype_Skills_GBX.ActionSkill.QCS_Analyzer": {
+    "name": "Quantum Combat Sequencer-- Analyzer",
+    "description": "Passive ability monitoring Fragtrap",
+    "default_starting_grade": 0,
+    "max_grade": 12,
+    "player_level_requirement": 0,
+    "icon_texture_name": "None"
+  },
+  "GD_Prototype_Skills_GBX.WeightSkills.Weight_AmmoLow": {
+    "name": "Weight - Ammo Low",
+    "description": "Ammo Low",
+    "default_starting_grade": 0,
+    "max_grade": 1,
+    "player_level_requirement": 0,
+    "icon_texture_name": "None"
+  },
+  "GD_Prototype_Skills_GBX.WeightSkills.Weight_BadassPresent": {
+    "name": "Weight - Badass Present",
+    "description": "Badass Present",
+    "default_starting_grade": 0,
+    "max_grade": 1,
+    "player_level_requirement": 0,
+    "icon_texture_name": "None"
+  },
+  "GD_Prototype_Skills_GBX.WeightSkills.Weight_BossPresent": {
+    "name": "Weight - Boss Present",
+    "description": "Boss Present",
+    "default_starting_grade": 0,
+    "max_grade": 1,
+    "player_level_requirement": 0,
+    "icon_texture_name": "None"
+  },
+  "GD_Prototype_Skills_GBX.WeightSkills.Weight_Coop": {
+    "name": "Weight - Co-op",
+    "description": "Buddies!",
+    "default_starting_grade": 0,
+    "max_grade": 1,
+    "player_level_requirement": 0,
+    "icon_texture_name": "None"
+  },
+  "GD_Prototype_Skills_GBX.WeightSkills.Weight_EnemyPresent": {
+    "name": "Weight - Enemy Present",
+    "description": "Enemies Present",
+    "default_starting_grade": 0,
+    "max_grade": 1,
+    "player_level_requirement": 0,
+    "icon_texture_name": "None"
+  },
+  "GD_Prototype_Skills_GBX.WeightSkills.Weight_FFYL": {
+    "name": "Weight - FFYL",
+    "description": "Fight For Your Life",
+    "default_starting_grade": 0,
+    "max_grade": 1,
+    "player_level_requirement": 0,
+    "icon_texture_name": "None"
+  },
+  "GD_Prototype_Skills_GBX.WeightSkills.Weight_HealthHigh": {
+    "name": "Weight - Health Full",
+    "description": "Health Full",
+    "default_starting_grade": 0,
+    "max_grade": 1,
+    "player_level_requirement": 0,
+    "icon_texture_name": "None"
+  },
+  "GD_Prototype_Skills_GBX.WeightSkills.Weight_HealthLow": {
+    "name": "Weight - Health Low",
+    "description": "Health Low",
+    "default_starting_grade": 0,
+    "max_grade": 1,
+    "player_level_requirement": 0,
+    "icon_texture_name": "None"
+  },
+  "GD_Prototype_Skills_GBX.WeightSkills.Weight_MeleeEnemy": {
+    "name": "Weight - Melee Enemy",
+    "description": "Melee Enemy",
+    "default_starting_grade": 0,
+    "max_grade": 1,
+    "player_level_requirement": 0,
+    "icon_texture_name": "None"
+  },
+  "GD_Prototype_Skills_GBX.WeightSkills.Weight_ShieldEmpty": {
+    "name": "Weight - Shield Empty",
+    "description": "Shield Empty",
+    "default_starting_grade": 0,
+    "max_grade": 1,
+    "player_level_requirement": 0,
+    "icon_texture_name": "None"
+  },
+  "GD_Prototype_Skills_GBX.WeightSkills.Weight_ShieldHigh": {
+    "name": "Weight - Shield Full",
+    "description": "Shield Full",
+    "default_starting_grade": 0,
+    "max_grade": 1,
+    "player_level_requirement": 0,
+    "icon_texture_name": "None"
+  },
+  "GD_Prototype_Skills_GBX.WeightSkills.Weight_ShieldLow": {
+    "name": "Weight - Shield Low",
+    "description": "Shield Low",
+    "default_starting_grade": 0,
+    "max_grade": 1,
+    "player_level_requirement": 0,
+    "icon_texture_name": "None"
+  },
+  "GD_Prototype_Skills_GBX.WeightSkills.Weight_ShotEnemy": {
+    "name": "Weight - Shot Enemy",
+    "description": "Shot Enemy",
+    "default_starting_grade": 0,
+    "max_grade": 1,
+    "player_level_requirement": 0,
+    "icon_texture_name": "None"
+  },
+  "GD_Prototype_Skills_GBX.WeightSkills.Weight_Solo": {
+    "name": "Weight - Solo",
+    "description": "Lonely Mode",
+    "default_starting_grade": 0,
+    "max_grade": 1,
+    "player_level_requirement": 0,
+    "icon_texture_name": "None"
+  },
+  "GD_Prototype_Skills_GBX.WeightSkills.Weight_Subroutine": {
+    "name": "Subroutine",
+    "description": "Subroutine Activated",
+    "default_starting_grade": 0,
+    "max_grade": 1,
+    "player_level_requirement": 0,
+    "icon_texture_name": "None"
+  },
+  "GD_Prototype_Skills_GBX.WeightSkills.Weight_ThrewGrenade": {
+    "name": "Weight - Threw Grenade",
+    "description": "Used Grenade",
+    "default_starting_grade": 0,
+    "max_grade": 1,
+    "player_level_requirement": 0,
+    "icon_texture_name": "None"
+  },
+  "GD_Quince_ClassMods.Skills.Skill_AllHyperionAllTheTime": {
+    "name": "All Hyperion All the Time",
+    "description": "Make all guns like Hyperion guns",
+    "default_starting_grade": 0,
+    "max_grade": 12,
+    "player_level_requirement": 0,
+    "icon_texture_name": "None"
+  },
+  "GD_Shields.Skills.Absorption_Shield_Skill_Legendary": {
+    "name": "Absorption Shield Skill",
+    "default_starting_grade": 0,
+    "max_grade": 12,
+    "player_level_requirement": 0,
+    "icon_texture_name": "None"
+  },
+  "GD_Shields.Skills.Absorption_Shield_Skill_PrismaticBulwark": {
+    "name": "Absorption Shield Skill",
+    "default_starting_grade": 0,
+    "max_grade": 12,
+    "player_level_requirement": 0,
+    "icon_texture_name": "None"
+  },
+  "GD_Shields.Skills.Booster_Shield_Skill": {
+    "name": "Booster Shield Skill",
+    "default_starting_grade": 0,
+    "max_grade": 12,
+    "player_level_requirement": 0,
+    "icon_texture_name": "None"
+  },
+  "GD_Shields.Skills.Booster_Shield_Skill_AsteroidBelt": {
+    "name": "Spike Shield Skill - Acid",
+    "default_starting_grade": 0,
+    "max_grade": 12,
+    "player_level_requirement": 0,
+    "icon_texture_name": "None"
+  },
+  "GD_Shields.Skills.Booster_Shield_Skill_Legendary": {
+    "name": "Booster Shield Skill",
+    "default_starting_grade": 0,
+    "max_grade": 12,
+    "player_level_requirement": 0,
+    "icon_texture_name": "None"
+  },
+  "GD_Shields.Skills.Booster_Shield_Skill_MoxxisSlammer": {
+    "name": "Booster Shield Skill",
+    "default_starting_grade": 0,
+    "max_grade": 12,
+    "player_level_requirement": 0,
+    "icon_texture_name": "None"
+  },
+  "GD_Shields.Skills.Booster_Shield_Skill_MoxxisSlammer_Active": {
+    "name": "Moxxi's Slammer Active Skill",
+    "default_starting_grade": 0,
+    "max_grade": 12,
+    "player_level_requirement": 0,
+    "icon_texture_name": "None"
+  },
+  "GD_Shields.Skills.Chimera_Shield_CorrosiveResistance_Skill": {
+    "name": "Chimera Shield Acid Resistance",
+    "default_starting_grade": 0,
+    "max_grade": 12,
+    "player_level_requirement": 0,
+    "icon_texture_name": "None"
+  },
+  "GD_Shields.Skills.Chimera_Shield_ExplosiveResistance_Skill": {
+    "name": "Chimera Shield Explosive Resistance",
+    "default_starting_grade": 0,
+    "max_grade": 12,
+    "player_level_requirement": 0,
+    "icon_texture_name": "None"
+  },
+  "GD_Shields.Skills.Chimera_Shield_FireResistance_Skill": {
+    "name": "Chimera Shield Fire Resistance",
+    "default_starting_grade": 0,
+    "max_grade": 12,
+    "player_level_requirement": 0,
+    "icon_texture_name": "None"
+  },
+  "GD_Shields.Skills.Chimera_Shield_IceResistance_Skill": {
+    "name": "Chimera Shield Ice Resistance",
+    "default_starting_grade": 0,
+    "max_grade": 12,
+    "player_level_requirement": 0,
+    "icon_texture_name": "None"
+  },
+  "GD_Shields.Skills.Chimera_Shield_ShockResistance_Skill": {
+    "name": "Chimera Shield Shock Resistance",
+    "default_starting_grade": 0,
+    "max_grade": 12,
+    "player_level_requirement": 0,
+    "icon_texture_name": "None"
+  },
+  "GD_Shields.Skills.Chimera_Shield_Skill": {
+    "name": "Chimera Shield Skill",
+    "default_starting_grade": 0,
+    "max_grade": 12,
+    "player_level_requirement": 0,
+    "icon_texture_name": "None"
+  },
+  "GD_Shields.Skills.Chimera_Shield_Skill_Haymaker": {
+    "name": "Chimera Shield Skill - Haymaker",
+    "default_starting_grade": 0,
+    "max_grade": 12,
+    "player_level_requirement": 0,
+    "icon_texture_name": "None"
+  },
+  "GD_Shields.Skills.Chimera_Shield_SkillHealthRegen": {
+    "name": "Chimera Shield Health Regen Skill",
+    "default_starting_grade": 0,
+    "max_grade": 12,
+    "player_level_requirement": 0,
+    "icon_texture_name": "None"
+  },
+  "GD_Shields.Skills.Impact_Shield_Skill": {
+    "name": "Impact Shield Skill",
+    "default_starting_grade": 0,
+    "max_grade": 12,
+    "player_level_requirement": 0,
+    "icon_texture_name": "None"
+  },
+  "GD_Shields.Skills.Juggernaut_Shield_Skill_LegendarySlow": {
+    "name": "Legendary Juggernaut Shield",
+    "default_starting_grade": 0,
+    "max_grade": 12,
+    "player_level_requirement": 0,
+    "icon_texture_name": "None"
+  },
+  "GD_Shields.Skills.Nova_Shield_Skill_Corrosive": {
+    "name": "Acid Nova Shield Skill",
+    "default_starting_grade": 0,
+    "max_grade": 12,
+    "player_level_requirement": 0,
+    "icon_texture_name": "None"
+  },
+  "GD_Shields.Skills.Nova_Shield_Skill_Explosive": {
+    "name": "Explosive Nova Shield Skill",
+    "default_starting_grade": 0,
+    "max_grade": 12,
+    "player_level_requirement": 0,
+    "icon_texture_name": "None"
+  },
+  "GD_Shields.Skills.Nova_Shield_Skill_Fire": {
+    "name": "Fire Nova Shield Skill",
+    "default_starting_grade": 0,
+    "max_grade": 12,
+    "player_level_requirement": 0,
+    "icon_texture_name": "None"
+  },
+  "GD_Shields.Skills.Nova_Shield_Skill_Legendary": {
+    "name": "Legendary Explosive Nova Shield Skill",
+    "default_starting_grade": 0,
+    "max_grade": 12,
+    "player_level_requirement": 0,
+    "icon_texture_name": "None"
+  },
+  "GD_Shields.Skills.Nova_Shield_Skill_Shock": {
+    "name": "Shock Nova Shield Skill",
+    "default_starting_grade": 0,
+    "max_grade": 12,
+    "player_level_requirement": 0,
+    "icon_texture_name": "None"
+  },
+  "GD_Shields.Skills.Nova_Shield_Skill_Singularity": {
+    "name": "Shock Nova Shield Skill",
+    "default_starting_grade": 0,
+    "max_grade": 12,
+    "player_level_requirement": 0,
+    "icon_texture_name": "None"
+  },
+  "GD_Shields.Skills.Nova_Shield_Skill_Sunshine": {
+    "name": "Fire Nova Shield Skill",
+    "default_starting_grade": 0,
+    "max_grade": 12,
+    "player_level_requirement": 0,
+    "icon_texture_name": "None"
+  },
+  "GD_Shields.Skills.Roid_Shield_Skill": {
+    "name": "Roid Shield Skill",
+    "default_starting_grade": 0,
+    "max_grade": 12,
+    "player_level_requirement": 0,
+    "icon_texture_name": "None"
+  },
+  "GD_Shields.Skills.Roid_Shield_Skill_AsteROID": {
+    "name": "Roid Shield Skill",
+    "default_starting_grade": 0,
+    "max_grade": 12,
+    "player_level_requirement": 0,
+    "icon_texture_name": "None"
+  },
+  "GD_Shields.Skills.Roid_Shield_Skill_Legendary": {
+    "name": "Roid Shield Skill",
+    "default_starting_grade": 0,
+    "max_grade": 12,
+    "player_level_requirement": 0,
+    "icon_texture_name": "None"
+  },
+  "GD_Shields.Skills.Spike_Shield_Skill_Corrosive": {
+    "name": "Spike Shield Skill - Acid",
+    "default_starting_grade": 0,
+    "max_grade": 12,
+    "player_level_requirement": 0,
+    "icon_texture_name": "None"
+  },
+  "GD_Shields.Skills.Spike_Shield_Skill_CorrosiveLegendary": {
+    "name": "Spike Shield Skill - Acid",
+    "default_starting_grade": 0,
+    "max_grade": 12,
+    "player_level_requirement": 0,
+    "icon_texture_name": "None"
+  },
+  "GD_Shields.Skills.Spike_Shield_Skill_Explosive": {
+    "name": "Spike Shield Skill - Explosive",
+    "default_starting_grade": 0,
+    "max_grade": 12,
+    "player_level_requirement": 0,
+    "icon_texture_name": "None"
+  },
+  "GD_Shields.Skills.Spike_Shield_Skill_Fire": {
+    "name": "Spike Shield Skill - Fire",
+    "default_starting_grade": 0,
+    "max_grade": 12,
+    "player_level_requirement": 0,
+    "icon_texture_name": "None"
+  },
+  "GD_Shields.Skills.Spike_Shield_Skill_Shock": {
+    "name": "Spike Shield Skill - Shock",
+    "default_starting_grade": 0,
+    "max_grade": 12,
+    "player_level_requirement": 0,
+    "icon_texture_name": "None"
+  },
+  "GD_Shock.Skills.Skill_ShockEffects": {
+    "name": "Shock status",
+    "default_starting_grade": 0,
+    "max_grade": 12,
+    "player_level_requirement": 0,
+    "icon_texture_name": "None"
+  },
+  "GD_Weap_Accessories.Skills.Oxygenator": {
+    "name": "Oxygenator",
+    "default_starting_grade": 0,
+    "max_grade": 12,
+    "player_level_requirement": 0,
+    "icon_texture_name": "None"
+  },
+  "GD_Weap_Accessories.Skills.Safeguard": {
+    "name": "Safeguard",
+    "default_starting_grade": 0,
+    "max_grade": 12,
+    "player_level_requirement": 0,
+    "icon_texture_name": "None"
+  },
+  "GD_Weap_Accessories.Skills.Safeguard_ShieldRegen": {
+    "name": "Safeguard Active",
+    "default_starting_grade": 0,
+    "max_grade": 12,
+    "player_level_requirement": 0,
+    "icon_texture_name": "None"
+  },
+  "GD_Weap_Launchers.Skills.Skill_VladofHalfAmmo": {
+    "name": "Vladof Half Ammo",
+    "default_starting_grade": 0,
+    "max_grade": 12,
+    "player_level_requirement": 0,
+    "icon_texture_name": "None"
+  },
+  "GD_Weap_SMG.Skills.Skill_Frostfire": {
+    "name": "Frostfire skill",
+    "default_starting_grade": 0,
+    "max_grade": 12,
+    "player_level_requirement": 0,
+    "icon_texture_name": "None"
+  }
+}

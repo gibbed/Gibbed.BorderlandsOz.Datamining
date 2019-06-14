@@ -17,7 +17,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Unreflect\Gibbed.Unreflect.Core\Gibbed.Unreflect.Core.csproj" />
-    <ProjectReference Include="..\WillowDatamining\WillowDatamining.csproj" />
+    <ProjectReference Include="..\BorderlandsOzDatamining\BorderlandsOzDatamining.csproj" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Microsoft.CSharp" />

@@ -24,7 +24,7 @@ using System.ComponentModel;
 using System.Globalization;
 using System.Resources;
 
-namespace WillowDatamining
+namespace BorderlandsOzDatamining
 {
     internal class Configurations
     {
@@ -42,7 +42,7 @@ namespace WillowDatamining
             {
                 if (ReferenceEquals(_ResourceManager, null))
                 {
-                    var temp = new ResourceManager("WillowDatamining.Resources", typeof(Configurations).Assembly);
+                    var temp = new ResourceManager("BorderlandsOzDatamining.Resources", typeof(Configurations).Assembly);
                     _ResourceManager = temp;
                 }
                 return _ResourceManager;

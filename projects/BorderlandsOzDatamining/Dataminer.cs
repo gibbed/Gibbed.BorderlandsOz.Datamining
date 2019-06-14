@@ -29,7 +29,7 @@ using System.IO;
 using Gibbed.Unreflect.Core;
 using Gibbed.Unreflect.Runtime;
 
-namespace WillowDatamining
+namespace BorderlandsOzDatamining
 {
     public class Dataminer
     {

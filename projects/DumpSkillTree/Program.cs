@@ -34,7 +34,7 @@ namespace DumpSkillTree
     {
         private static void Main(string[] args)
         {
-            new WillowDatamining.Dataminer().Run(args, Go);
+            new BorderlandsOzDatamining.Dataminer().Run(args, Go);
         }
 
         private static void Go(Engine engine)
@@ -53,7 +53,7 @@ namespace DumpSkillTree
 
             foreach (dynamic skillTreeDefinition in skillTreeDefinitions)
             {
-                using (var output = WillowDatamining.Dataminer.NewDump("Skill Tree [" + skillTreeDefinition.GetPath() + "].json"))
+                using (var output = BorderlandsOzDatamining.Dataminer.NewDump("Skill Tree [" + skillTreeDefinition.GetPath() + "].json"))
                 using (var writer = new JsonTextWriter(output))
                 {
                     writer.Indentation = 2;

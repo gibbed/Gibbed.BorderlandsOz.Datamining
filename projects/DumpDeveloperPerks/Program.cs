@@ -33,7 +33,7 @@ namespace DumpDeveloperPerks
     {
         private static void Main(string[] args)
         {
-            new WillowDatamining.Dataminer().Run(args, Go);
+            new BorderlandsOzDatamining.Dataminer().Run(args, Go);
         }
 
         private static void Go(Engine engine)

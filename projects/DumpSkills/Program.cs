@@ -34,7 +34,7 @@ namespace DumpSkills
     {
         private static void Main(string[] args)
         {
-            new WillowDatamining.Dataminer().Run(args, Go);
+            new BorderlandsOzDatamining.Dataminer().Run(args, Go);
         }
 
         private static void Go(Engine engine)
@@ -51,7 +51,7 @@ namespace DumpSkills
                                                      false)
                                          .OrderBy(o => o.GetPath());
 
-            using (var output = WillowDatamining.Dataminer.NewDump("Skills.json"))
+            using (var output = BorderlandsOzDatamining.Dataminer.NewDump("Skills.json"))
             using (var writer = new JsonTextWriter(output))
             {
                 writer.Indentation = 2;

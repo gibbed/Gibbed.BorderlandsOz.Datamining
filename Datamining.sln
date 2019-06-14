@@ -11,7 +11,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Unreflect", "Unreflect", "{
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Dumpers", "Dumpers", "{AC56FF96-28E0-49D4-9869-F1159D0FCF32}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WillowDatamining", "projects\WillowDatamining\WillowDatamining.csproj", "{3E2F2EC6-F71F-4F39-9A29-2CF32F650BE3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BorderlandsOzDatamining", "projects\BorderlandsOzDatamining\BorderlandsOzDatamining.csproj", "{3E2F2EC6-F71F-4F39-9A29-2CF32F650BE3}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Test", "projects\Test\Test.csproj", "{FD3C44B8-CE16-46A4-9169-76580F41D66F}"
 EndProject

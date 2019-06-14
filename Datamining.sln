@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.28803.156
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gibbed.Unreflect.Core", "projects\Gibbed.Unreflect.Core\Gibbed.Unreflect.Core.csproj", "{5CB232F6-6E10-4D06-83B6-8238895ED36F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Gibbed.Unreflect.Core", "projects\Unreflect\Gibbed.Unreflect.Core\Gibbed.Unreflect.Core.csproj", "{5CB232F6-6E10-4D06-83B6-8238895ED36F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gibbed.Unreflect.Runtime", "projects\Gibbed.Unreflect.Runtime\Gibbed.Unreflect.Runtime.csproj", "{78358FEB-E627-490E-8701-3C5DBE2D72FA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Gibbed.Unreflect.Runtime", "projects\Unreflect\Gibbed.Unreflect.Runtime\Gibbed.Unreflect.Runtime.csproj", "{78358FEB-E627-490E-8701-3C5DBE2D72FA}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Unreflect", "Unreflect", "{7F29E410-7332-4628-AF33-B1DC2FCFFE20}"
 EndProject
@@ -52,8 +52,10 @@ Global
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{5CB232F6-6E10-4D06-83B6-8238895ED36F}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{5CB232F6-6E10-4D06-83B6-8238895ED36F}.Debug|x86.Build.0 = Debug|Any CPU
 		{5CB232F6-6E10-4D06-83B6-8238895ED36F}.Release|x86.ActiveCfg = Release|Any CPU
 		{78358FEB-E627-490E-8701-3C5DBE2D72FA}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{78358FEB-E627-490E-8701-3C5DBE2D72FA}.Debug|x86.Build.0 = Debug|Any CPU
 		{78358FEB-E627-490E-8701-3C5DBE2D72FA}.Release|x86.ActiveCfg = Release|Any CPU
 		{3E2F2EC6-F71F-4F39-9A29-2CF32F650BE3}.Debug|x86.ActiveCfg = Debug|x86
 		{3E2F2EC6-F71F-4F39-9A29-2CF32F650BE3}.Debug|x86.Build.0 = Debug|x86

@@ -21,12 +21,9 @@
  */
 
 using System;
-using System.Collections.Generic;
-using System.IO;
 using System.Linq;
-using System.Text;
 using Gibbed.Unreflect.Core;
-using Newtonsoft.Json;
+using Dataminer = BorderlandsOzDatamining.Dataminer;
 
 namespace DumpDownloadableContentManager
 {
@@ -34,7 +31,7 @@ namespace DumpDownloadableContentManager
     {
         private static void Main(string[] args)
         {
-            new BorderlandsOzDatamining.Dataminer().Run(args, Go);
+            new Dataminer().Run(args, Go);
         }
 
         private static void Go(Engine engine)
@@ -45,31 +42,24 @@ namespace DumpDownloadableContentManager
                 throw new InvalidOperationException();
             }
 
-            dynamic creditsGfxDefinition = engine.Objects.FirstOrDefault(o => o.IsA(creditsGfxDefinitionClass) &&
-                                                                 o.GetName().StartsWith("Default__") == false);
+            dynamic creditsGfxDefinition = engine.Objects.FirstOrDefault(
+                o => o.IsA(creditsGfxDefinitionClass) &&
+                     o.GetName().StartsWith("Default__") == false);
             if (creditsGfxDefinition == null)
             {
                 throw new InvalidOperationException();
             }
 
-            using (var output = BorderlandsOzDatamining.Dataminer.NewDump("Credits.json"))
-            using (var writer = new JsonTextWriter(output))
+            using (var writer = Dataminer.NewDump("Credits.json"))
             {
-                writer.Indentation = 2;
-                writer.IndentChar = ' ';
-                writer.Formatting = Formatting.Indented;
-
                 writer.WriteStartArray();
-
                 foreach (var line in creditsGfxDefinition.CreditData)
                 {
                     writer.WriteValue(line.Text);
                 }
-
                 writer.WriteEndArray();
                 writer.Flush();
             }
-
         }
     }
 }

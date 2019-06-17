@@ -22,11 +22,9 @@
 
 using System;
 using System.Collections.Generic;
-using System.IO;
 using System.Linq;
-using System.Text;
 using Gibbed.Unreflect.Core;
-using Newtonsoft.Json;
+using Dataminer = BorderlandsOzDatamining.Dataminer;
 
 namespace DumpParts
 {
@@ -34,7 +32,7 @@ namespace DumpParts
     {
         private static void Main(string[] args)
         {
-            new BorderlandsOzDatamining.Dataminer().Run(args, Go);
+            new Dataminer().Run(args, Go);
         }
 
         private static void Go(Engine engine)
@@ -71,16 +69,12 @@ namespace DumpParts
             }
 
             var weaponParts = engine.Objects
-                .Where(o => o.IsA(weaponPartDefinitionClass) == true && o.GetName().StartsWith("Default__") == false)
+                .Where(o => o.IsA(weaponPartDefinitionClass) == true &&
+                            o.GetName().StartsWith("Default__") == false)
                 .Distinct()
                 .OrderBy(o => o.GetPath());
-            using (var output = BorderlandsOzDatamining.Dataminer.NewDump("Weapon Parts.json"))
-            using (var writer = new JsonTextWriter(output))
+            using (var writer = Dataminer.NewDump("Weapon Parts.json"))
             {
-                writer.Indentation = 2;
-                writer.IndentChar = ' ';
-                writer.Formatting = Formatting.Indented;
-
                 writer.WriteStartObject();
 
                 foreach (dynamic weaponPart in weaponParts)
@@ -134,16 +128,12 @@ namespace DumpParts
             }
 
             var weaponNameParts = engine.Objects
-                .Where(o => o.IsA(weaponNamePartDefinitionClass) == true && o.GetName().StartsWith("Default__") == false)
+                .Where(o => o.IsA(weaponNamePartDefinitionClass) == true &&
+                            o.GetName().StartsWith("Default__") == false)
                 .Distinct()
                 .OrderBy(o => o.GetPath());
-            using (var output = BorderlandsOzDatamining.Dataminer.NewDump("Weapon Name Parts.json"))
-            using (var writer = new JsonTextWriter(output))
+            using (var writer = Dataminer.NewDump("Weapon Name Parts.json"))
             {
-                writer.Indentation = 2;
-                writer.IndentChar = ' ';
-                writer.Formatting = Formatting.Indented;
-
                 writer.WriteStartObject();
 
                 foreach (dynamic weaponNamePart in weaponNameParts)
@@ -175,11 +165,13 @@ namespace DumpParts
                         IEnumerable<dynamic> externalAttributeEffects = weaponNamePart.ExternalAttributeEffects;
                         foreach (var externalAttributeEffect in externalAttributeEffects)
                         {
-                            if (externalAttributeEffect.AttributeToModify != null &&
-                                externalAttributeEffect.AttributeToModify.GetPath() !=
-                                "GD_Shields.Attributes.Attr_LawEquipped")
+                            if (externalAttributeEffect.AttributeToModify != null)
                             {
-                                throw new InvalidOperationException();
+                                var attributeToModifyPath = externalAttributeEffect.AttributeToModify.GetPath();
+                                if (attributeToModifyPath != "GD_Shields.Attributes.Attr_LawEquipped")
+                                {
+                                    throw new InvalidOperationException();
+                                }
                             }
                         }
                     }
@@ -341,13 +333,8 @@ namespace DumpParts
                             o.GetName().StartsWith("Default__") == false)
                 .Distinct()
                 .OrderBy(o => o.GetPath());
-            using (var output = BorderlandsOzDatamining.Dataminer.NewDump("Item Parts.json"))
-            using (var writer = new JsonTextWriter(output))
+            using (var writer = Dataminer.NewDump("Item Parts.json"))
             {
-                writer.Indentation = 2;
-                writer.IndentChar = ' ';
-                writer.Formatting = Formatting.Indented;
-
                 writer.WriteStartObject();
 
                 foreach (dynamic itemPart in itemParts)
@@ -405,16 +392,12 @@ namespace DumpParts
             }
 
             var itemNameParts = engine.Objects
-                .Where(o => o.IsA(itemNamePartDefinitionClass) == true && o.GetName().StartsWith("Default__") == false)
+                .Where(o => o.IsA(itemNamePartDefinitionClass) == true &&
+                            o.GetName().StartsWith("Default__") == false)
                 .Distinct()
                 .OrderBy(o => o.GetPath());
-            using (var output = BorderlandsOzDatamining.Dataminer.NewDump("Item Name Parts.json"))
-            using (var writer = new JsonTextWriter(output))
+            using (var writer = Dataminer.NewDump("Item Name Parts.json"))
             {
-                writer.Indentation = 2;
-                writer.IndentChar = ' ';
-                writer.Formatting = Formatting.Indented;
-
                 writer.WriteStartObject();
 
                 foreach (dynamic itemNamePart in itemNameParts)

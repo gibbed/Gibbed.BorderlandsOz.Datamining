@@ -22,11 +22,9 @@
 
 using System;
 using System.Collections.Generic;
-using System.IO;
 using System.Linq;
-using System.Text;
 using Gibbed.Unreflect.Core;
-using Newtonsoft.Json;
+using Dataminer = BorderlandsOzDatamining.Dataminer;
 
 namespace DumpCustomizations
 {
@@ -34,7 +32,7 @@ namespace DumpCustomizations
     {
         private static void Main(string[] args)
         {
-            new BorderlandsOzDatamining.Dataminer().Run(args, Go);
+            new Dataminer().Run(args, Go);
         }
 
         private static void Go(Engine engine)
@@ -45,13 +43,8 @@ namespace DumpCustomizations
                 throw new InvalidOperationException();
             }
 
-            using (var output = BorderlandsOzDatamining.Dataminer.NewDump("Customizations.json"))
-            using (var writer = new JsonTextWriter(output))
+            using (var writer = Dataminer.NewDump("Customizations.json"))
             {
-                writer.Indentation = 2;
-                writer.IndentChar = ' ';
-                writer.Formatting = Formatting.Indented;
-
                 writer.WriteStartObject();
 
                 var customizationDefinitions = engine.Objects

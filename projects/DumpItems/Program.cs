@@ -22,11 +22,10 @@
 
 using System;
 using System.Collections.Generic;
-using System.IO;
 using System.Linq;
-using System.Text;
 using Gibbed.Unreflect.Core;
 using Newtonsoft.Json;
+using Dataminer = BorderlandsOzDatamining.Dataminer;
 
 namespace DumpItems
 {
@@ -34,7 +33,7 @@ namespace DumpItems
     {
         private static void Main(string[] args)
         {
-            new BorderlandsOzDatamining.Dataminer().Run(args, Go);
+            new Dataminer().Run(args, Go);
         }
 
         private static void Go(Engine engine)
@@ -56,9 +55,9 @@ namespace DumpItems
             var weaponTypes = new List<dynamic>();
             {
                 var balanceDefinitions = engine.Objects
-                                               .Where(o => o.IsA(weaponBalanceDefinitionClass) &&
-                                                           o.GetName().StartsWith("Default__") == false)
-                                               .OrderBy(o => o.GetPath());
+                    .Where(o => o.IsA(weaponBalanceDefinitionClass) &&
+                                o.GetName().StartsWith("Default__") == false)
+                    .OrderBy(o => o.GetPath());
                 foreach (dynamic balanceDefinition in balanceDefinitions)
                 {
                     if (balanceDefinition.PartListCollection != null)
@@ -87,13 +86,8 @@ namespace DumpItems
                 }
             }
 
-            using (var output = BorderlandsOzDatamining.Dataminer.NewDump("Weapon Types.json"))
-            using (var writer = new JsonTextWriter(output))
+            using (var writer = Dataminer.NewDump("Weapon Types.json"))
             {
-                writer.Indentation = 2;
-                writer.IndentChar = ' ';
-                writer.Formatting = Formatting.Indented;
-
                 writer.WriteStartObject();
 
                 foreach (var weaponType in weaponTypes.Distinct().OrderBy(wp => wp.GetPath()))
@@ -158,13 +152,12 @@ namespace DumpItems
 
             var itemTypes = new List<dynamic>();
             {
-                var balanceDefinitions = engine.Objects.Where(
-                    o =>
-                    (o.IsA(inventoryBalanceDefinitionClass) ||
-                     o.IsA(itemBalanceDefinitionClass) ||
-                     o.IsA(classModBalanceDefinitionClass)) &&
-                    o.GetName().StartsWith("Default__") == false)
-                                               .OrderBy(o => o.GetPath());
+                var balanceDefinitions = engine.Objects
+                    .Where(o => (o.IsA(inventoryBalanceDefinitionClass) ||
+                                 o.IsA(itemBalanceDefinitionClass) ||
+                                 o.IsA(classModBalanceDefinitionClass)) &&
+                                o.GetName().StartsWith("Default__") == false)
+                    .OrderBy(o => o.GetPath());
                 foreach (dynamic balanceDefinition in balanceDefinitions)
                 {
                     var uclass = balanceDefinition.GetClass();
@@ -206,13 +199,8 @@ namespace DumpItems
                 }
             }
 
-            using (var output = BorderlandsOzDatamining.Dataminer.NewDump("Item Types.json"))
-            using (var writer = new JsonTextWriter(output))
+            using (var writer = Dataminer.NewDump("Item Types.json"))
             {
-                writer.Indentation = 2;
-                writer.IndentChar = ' ';
-                writer.Formatting = Formatting.Indented;
-
                 writer.WriteStartObject();
 
                 foreach (var itemType in itemTypes.Distinct().OrderBy(wp => wp.GetPath()))

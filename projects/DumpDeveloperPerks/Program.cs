@@ -26,6 +26,7 @@ using System.Linq;
 using System.Text;
 using Gibbed.Unreflect.Core;
 using Newtonsoft.Json;
+using Dataminer = BorderlandsOzDatamining.Dataminer;
 
 namespace DumpDeveloperPerks
 {
@@ -33,7 +34,7 @@ namespace DumpDeveloperPerks
     {
         private static void Main(string[] args)
         {
-            new BorderlandsOzDatamining.Dataminer().Run(args, Go);
+            new Dataminer().Run(args, Go);
         }
 
         private static void Go(Engine engine)
@@ -44,20 +45,16 @@ namespace DumpDeveloperPerks
                 throw new InvalidOperationException();
             }
 
-            dynamic developerPerks = engine.Objects.FirstOrDefault(o => o.IsA(developerPerksDefinitionClass) &&
-                                                                        o.GetName().StartsWith("Default__") == false);
+            dynamic developerPerks = engine.Objects
+                .FirstOrDefault(o => o.IsA(developerPerksDefinitionClass) &&
+                                     o.GetName().StartsWith("Default__") == false);
             if (developerPerks == null)
             {
                 throw new InvalidOperationException();
             }
 
-            using (var output = BorderlandsOzDatamining.Dataminer.NewDump("Developer Perks.json"))
-            using (var writer = new JsonTextWriter(output))
+            using (var writer = Dataminer.NewDump("Developer Perks.json"))
             {
-                writer.Indentation = 2;
-                writer.IndentChar = ' ';
-                writer.Formatting = Formatting.Indented;
-
                 writer.WriteStartObject();
 
                 writer.WritePropertyName("developers");

@@ -22,11 +22,10 @@
 
 using System;
 using System.Collections.Generic;
-using System.IO;
 using System.Linq;
-using System.Text;
 using Gibbed.Unreflect.Core;
 using Newtonsoft.Json;
+using Dataminer = BorderlandsOzDatamining.Dataminer;
 
 namespace DumpPlayerClasses
 {
@@ -34,7 +33,7 @@ namespace DumpPlayerClasses
     {
         private static void Main(string[] args)
         {
-            new BorderlandsOzDatamining.Dataminer().Run(args, Go);
+            new Dataminer().Run(args, Go);
         }
 
         private static void Go(Engine engine)
@@ -51,20 +50,14 @@ namespace DumpPlayerClasses
                 throw new InvalidOperationException();
             }
 
-            using (var output = BorderlandsOzDatamining.Dataminer.NewDump("Player Classes.json"))
-            using (var writer = new JsonTextWriter(output))
+            using (var writer = Dataminer.NewDump("Player Classes.json"))
             {
-                writer.Indentation = 2;
-                writer.IndentChar = ' ';
-                writer.Formatting = Formatting.Indented;
-
                 writer.WriteStartObject();
 
                 var playerClassDefinitionClasses = engine.Objects
-                                                         .Where(o => o.IsA(playerClassDefinitionClass) &&
-                                                                     o.GetName().StartsWith("Default__") ==
-                                                                     false)
-                                                         .OrderBy(o => o.GetPath());
+                    .Where(o => o.IsA(playerClassDefinitionClass) &&
+                                o.GetName().StartsWith("Default__") == false)
+                    .OrderBy(o => o.GetPath());
                 foreach (dynamic playerClassDefinition in playerClassDefinitionClasses)
                 {
                     writer.WritePropertyName(playerClassDefinition.GetPath());

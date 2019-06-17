@@ -27,6 +27,7 @@ using System.Linq;
 using System.Text;
 using Gibbed.Unreflect.Core;
 using Newtonsoft.Json;
+using Dataminer = BorderlandsOzDatamining.Dataminer;
 
 namespace DumpSkills
 {
@@ -34,7 +35,7 @@ namespace DumpSkills
     {
         private static void Main(string[] args)
         {
-            new BorderlandsOzDatamining.Dataminer().Run(args, Go);
+            new Dataminer().Run(args, Go);
         }
 
         private static void Go(Engine engine)
@@ -46,18 +47,11 @@ namespace DumpSkills
             }
 
             var skillDefinitions = engine.Objects
-                                         .Where(o => o.IsA(skillDefinitionClass) &&
-                                                     o.GetName().StartsWith("Default__") ==
-                                                     false)
-                                         .OrderBy(o => o.GetPath());
-
-            using (var output = BorderlandsOzDatamining.Dataminer.NewDump("Skills.json"))
-            using (var writer = new JsonTextWriter(output))
+                .Where(o => o.IsA(skillDefinitionClass) &&
+                            o.GetName().StartsWith("Default__") == false)
+                .OrderBy(o => o.GetPath());
+            using (var writer = Dataminer.NewDump("Skills.json"))
             {
-                writer.Indentation = 2;
-                writer.IndentChar = ' ';
-                writer.Formatting = Formatting.Indented;
-
                 writer.WriteStartObject();
 
                 foreach (dynamic skillDefinition in skillDefinitions)

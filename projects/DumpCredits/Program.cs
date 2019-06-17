@@ -47,7 +47,8 @@ namespace DumpDownloadableContentManager
                      o.GetName().StartsWith("Default__") == false);
             if (creditsGfxDefinition == null)
             {
-                throw new InvalidOperationException();
+                Console.WriteLine("Credits object is missing.");
+                return;
             }
 
             using (var writer = Dataminer.NewDump("Credits.json"))

@@ -35,5 +35,6 @@ namespace DumpParts
         Material = 8,
         Prefix = 9,
         Title = 10,
+        Invalid11 = 11,
     }
 }

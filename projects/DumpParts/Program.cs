@@ -118,8 +118,17 @@ namespace DumpParts
                         writer.WriteEndArray();
                     }
 
+                    var partType = (WeaponPartType)weaponPart.PartType;
+
                     writer.WritePropertyName("type");
-                    writer.WriteValue(((WeaponPartType)weaponPart.PartType).ToString());
+                    if (partType != WeaponPartType.Invalid11)
+                    {
+                        writer.WriteValue(partType.ToString());
+                    }
+                    else
+                    {
+                        writer.WriteValue("Invalid");
+                    }
 
                     writer.WriteEndObject();
                 }

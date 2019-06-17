@@ -26,7 +26,7 @@ using System.Linq;
 using Gibbed.Unreflect.Core;
 using Dataminer = BorderlandsOzDatamining.Dataminer;
 
-namespace DumpDownloadableContentManager
+namespace DumpDLC
 {
     internal class Program
     {
@@ -37,32 +37,33 @@ namespace DumpDownloadableContentManager
 
         private static void Go(Engine engine)
         {
-            var willowDownloadableContentManagerClass = engine.GetClass("WillowGame.WillowDownloadableContentManager");
-            var downloadablePackageDefinitionClass = engine.GetClass("WillowGame.DownloadablePackageDefinition");
-            if (willowDownloadableContentManagerClass == null ||
-                downloadablePackageDefinitionClass == null)
+            var managerClass = engine.GetClass("WillowGame.WillowDownloadableContentManager");
+            var packageClass = engine.GetClass("WillowGame.DownloadablePackageDefinition");
+            if (managerClass == null || packageClass == null)
             {
                 throw new InvalidOperationException();
             }
+
+            var managers = engine.Objects
+                .Where(o => o.IsA(managerClass) &&
+                            o.GetName().StartsWith("Default__") == false)
+                .OrderBy(o => o.GetPath())
+                .ToArray();
+            if (managers.Length != 1)
+            {
+                throw new InvalidOperationException();
+            }
+            dynamic manager = managers.First();
 
             using (var writer = Dataminer.NewDump("Downloadable Contents.json"))
             {
                 writer.WriteStartObject();
 
-                var willowDownloadableContentManagers = engine.Objects
-                    .Where(o => o.IsA(willowDownloadableContentManagerClass) &&
-                                o.GetName().StartsWith("Default__") == false)
-                    .OrderBy(o => o.GetPath())
-                    .ToArray();
-                if (willowDownloadableContentManagers.Length != 1)
-                {
-                    throw new InvalidOperationException();
-                }
+                var allContent = manager.AllContent;
 
-                dynamic willowDownloadableContentManager = willowDownloadableContentManagers.First();
-                var allContent = willowDownloadableContentManager.AllContent;
-
-                foreach (var content in ((IEnumerable<dynamic>)allContent).OrderBy(o => o.GetPath()))
+                foreach (var content in ((IEnumerable<dynamic>)allContent)
+                    .OrderBy(c => c.PackageDef.PackageId)
+                    .ThenBy(c => c.ContentId))
                 {
                     writer.WritePropertyName(content.GetPath());
                     writer.WriteStartObject();
@@ -106,23 +107,24 @@ namespace DumpDownloadableContentManager
             {
                 writer.WriteStartObject();
 
-                var downloadablePackageDefinitions = engine.Objects
-                    .Where(o => o.IsA(downloadablePackageDefinitionClass) &&
+                var packages = engine.Objects
+                    .Where(o => o.IsA(packageClass) &&
                                 o.GetName().StartsWith("Default__") == false)
-                    .OrderBy(o => o.GetPath());
-                foreach (dynamic downloadablePackageDefinition in downloadablePackageDefinitions)
+                    .Cast<dynamic>()
+                    .OrderBy(o => o.PackageId);
+                foreach (dynamic package in packages)
                 {
-                    writer.WritePropertyName(downloadablePackageDefinition.GetPath());
+                    writer.WritePropertyName(package.GetPath());
                     writer.WriteStartObject();
 
                     writer.WritePropertyName("id");
-                    writer.WriteValue(downloadablePackageDefinition.PackageId);
+                    writer.WriteValue(package.PackageId);
 
                     writer.WritePropertyName("dlc_name");
-                    writer.WriteValue(downloadablePackageDefinition.DLCName);
+                    writer.WriteValue(package.DLCName);
 
                     writer.WritePropertyName("display_name");
-                    writer.WriteValue(downloadablePackageDefinition.PackageDisplayName);
+                    writer.WriteValue(package.PackageDisplayName);
 
                     writer.WriteEndObject();
                 }
@@ -134,12 +136,12 @@ namespace DumpDownloadableContentManager
 
         private static readonly Dictionary<string, string> _ContentTypeMapping = new Dictionary<string, string>()
         {
-            { "WillowGame.DownloadableExpansionDefinition", "Expansion" },
+            { "WillowGame.DownloadableBalanceModifierDefinition", "BalanceModifier" },
+            { "WillowGame.DownloadableCharacterDefinition", "Character" },
             { "WillowGame.DownloadableCustomizationSetDefinition", "CustomizationSet" },
+            { "WillowGame.DownloadableExpansionDefinition", "Expansion" },
             { "WillowGame.DownloadableItemSetDefinition", "ItemSet" },
             { "WillowGame.DownloadableVehicleDefinition", "Vehicle" },
-            { "WillowGame.DownloadableCharacterDefinition", "Character" },
-            { "WillowGame.DownloadableBalanceModifierDefinition", "BalanceModifier" },
         };
     }
 }

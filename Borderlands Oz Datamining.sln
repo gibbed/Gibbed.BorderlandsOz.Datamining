@@ -23,7 +23,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DumpCustomizations", "proje
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DumpDeveloperPerks", "projects\DumpDeveloperPerks\DumpDeveloperPerks.csproj", "{F675215E-51DD-436B-AC48-0C5EB20BA411}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DumpDownloadableContentManager", "projects\DumpDownloadableContentManager\DumpDownloadableContentManager.csproj", "{8D8ADFE9-F809-48FD-8651-22514C21DFC2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DumpDLC", "projects\DumpDLC\DumpDLC.csproj", "{8D8ADFE9-F809-48FD-8651-22514C21DFC2}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DumpItems", "projects\DumpItems\DumpItems.csproj", "{767544DB-AD70-41BC-B70B-B39F47D6FA18}"
 EndProject

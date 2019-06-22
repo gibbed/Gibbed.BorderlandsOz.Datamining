@@ -45,15 +45,15 @@ namespace DumpBalance
 
         private static void Go(Engine engine)
         {
+            var inventoryBalanceClass = engine.GetClass("WillowGame.InventoryBalanceDefinition");
             var weaponBalanceClass = engine.GetClass("WillowGame.WeaponBalanceDefinition");
             var missionWeaponBalanceClass = engine.GetClass("WillowGame.MissionWeaponBalanceDefinition");
-            var inventoryBalanceClass = engine.GetClass("WillowGame.InventoryBalanceDefinition");
             var itemBalanceClass = engine.GetClass("WillowGame.ItemBalanceDefinition");
             var classModBalanceClass = engine.GetClass("WillowGame.ClassModBalanceDefinition");
             var itemClass = engine.GetClass("WillowGame.ItemDefinition");
-            if (weaponBalanceClass == null ||
+            if (inventoryBalanceClass == null ||
+                weaponBalanceClass == null ||
                 missionWeaponBalanceClass == null ||
-                inventoryBalanceClass == null ||
                 itemBalanceClass == null ||
                 classModBalanceClass == null ||
                 itemClass == null)
@@ -61,10 +61,10 @@ namespace DumpBalance
                 throw new InvalidOperationException();
             }
 
+            var weaponBalancePartLists = new List<KeyValuePair<string, dynamic>>();
             using (var writer = Dataminer.NewDump("Weapon Balance.json"))
             {
                 writer.WriteStartObject();
-
                 var balances = engine.Objects
                     .Where(o => (o.IsA(inventoryBalanceClass) ||
                                  o.IsA(weaponBalanceClass)) &&
@@ -101,18 +101,18 @@ namespace DumpBalance
                     writer.WritePropertyName(balancePath);
                     writer.WriteStartObject();
 
-                    var baseDefinition = balance.BaseDefinition;
-                    if (baseDefinition != null)
+                    var baseBalance = balance.BaseDefinition;
+                    if (baseBalance != null)
                     {
                         writer.WritePropertyName("base");
-                        writer.WriteValue(baseDefinition.GetPath());
+                        writer.WriteValue(baseBalance.GetPath());
                     }
 
                     var typePath = (string)balance.InventoryDefinition?.GetPath();
                     var baseTypePath = (string)balance.BaseDefinition?.InventoryDefinition?.GetPath();
                     if (typePath != null && (baseTypePath == null || typePath != baseTypePath))
                     {
-                        writer.WritePropertyName("type");
+                        writer.WritePropertyName("weapon_type");
                         writer.WriteValue(typePath);
                     }
 
@@ -135,73 +135,97 @@ namespace DumpBalance
                         throw new NotSupportedException();
                     }
 
-                    if (balance.GetClass() == weaponBalanceClass)
+                    if (balance.GetClass() != weaponBalanceClass)
                     {
-                        var partList = balance.RuntimePartListCollection;
-                        if (partList == null)
-                        {
-                            throw new InvalidOperationException();
-                        }
-
-                        if (partList != null)
-                        {
-                            var basePartList = baseDefinition == null ? null : baseDefinition.RuntimePartListCollection;
-
-                            PartReplacementMode? mode = null;
-                            var bodyPartData = BuildCustomPartTypeData(partList.BodyPartData, basePartList?.BodyPartData, ref mode);
-                            var gripPartData = BuildCustomPartTypeData(partList.GripPartData, basePartList?.GripPartData, ref mode);
-                            var barrelPartData = BuildCustomPartTypeData(partList.BarrelPartData, basePartList?.BarrelPartData, ref mode);
-                            var sightPartData = BuildCustomPartTypeData(partList.SightPartData, basePartList?.SightPartData, ref mode);
-                            var stockPartData = BuildCustomPartTypeData(partList.StockPartData, basePartList?.StockPartData, ref mode);
-                            var elementalPartData = BuildCustomPartTypeData(partList.ElementalPartData, basePartList?.ElementalPartData, ref mode);
-                            var accessory1PartData = BuildCustomPartTypeData(partList.Accessory1PartData, basePartList?.Accessory1PartData, ref mode);
-                            var accessory2PartData = BuildCustomPartTypeData(partList.Accessory2PartData, basePartList?.Accessory2PartData, ref mode);
-                            var materialPartData = BuildCustomPartTypeData(partList.MaterialPartData, basePartList?.MaterialPartData, ref mode);
-
-                            if (mode == null)
-                            {
-                                throw new InvalidOperationException();
-                            }
-
-                            writer.WritePropertyName("parts");
-                            writer.WriteStartObject();
-
-                            writer.WritePropertyName("mode");
-                            writer.WriteValue(mode.ToString());
-
-                            var associatedWeaponTypePath = (string)partList.AssociatedWeaponType?.GetPath();
-                            var baseAssociatedWeaponTypePath = (string)basePartList?.AssociatedWeaponType?.GetPath();
-                            if (associatedWeaponTypePath != null &&
-                                (baseAssociatedWeaponTypePath == null || associatedWeaponTypePath != baseAssociatedWeaponTypePath))
-                            {
-                                writer.WritePropertyName("type");
-                                writer.WriteValue(associatedWeaponTypePath);
-                            }
-
-                            WriteStrings(writer, "body", bodyPartData);
-                            WriteStrings(writer, "grip", gripPartData);
-                            WriteStrings(writer, "barrel", barrelPartData);
-                            WriteStrings(writer, "sight", sightPartData);
-                            WriteStrings(writer, "stock", stockPartData);
-                            WriteStrings(writer, "elemental", elementalPartData);
-                            WriteStrings(writer, "accessory1", accessory1PartData);
-                            WriteStrings(writer, "accessory2", accessory2PartData);
-                            WriteStrings(writer, "material", materialPartData);
-
-                            writer.WriteEndObject();
-                        }
+                        goto after;
                     }
 
+                    var weaponPartList = balance.WeaponPartListCollection;
+                    if (weaponPartList == null)
+                    {
+                        throw new InvalidOperationException();
+                    }
+
+                    var runtimePartList = balance.RuntimePartListCollection;
+                    if (runtimePartList == null)
+                    {
+                        throw new InvalidOperationException();
+                    }
+
+                    var weaponPartListPath = (string)weaponPartList.GetPath();
+                    weaponBalancePartLists.Add(new KeyValuePair<string, dynamic>(weaponPartListPath, balance));
+
+                    writer.WritePropertyName("parts");
+                    writer.WriteValue(weaponPartListPath);
+
+                    after:
                     writer.WriteEndObject();
                 }
-
                 writer.WriteEndObject();
             }
 
+            using (var writer = Dataminer.NewDump("Weapon Balance Part Lists.json"))
+            {
+                writer.WriteStartObject();
+                foreach (var kv in weaponBalancePartLists)
+                {
+                    var partListPath = kv.Key;
+                    var balance = kv.Value;
+
+                    var partList = balance.RuntimePartListCollection;
+                    var baseBalance = balance.BaseDefinition;
+                    var basePartList = baseBalance == null ? null : baseBalance.RuntimePartListCollection;
+
+                    PartReplacementMode? mode = null;
+                    var bodyPartData = BuildPartList(partList.BodyPartData, basePartList?.BodyPartData, ref mode);
+                    var gripPartData = BuildPartList(partList.GripPartData, basePartList?.GripPartData, ref mode);
+                    var barrelPartData = BuildPartList(partList.BarrelPartData, basePartList?.BarrelPartData, ref mode);
+                    var sightPartData = BuildPartList(partList.SightPartData, basePartList?.SightPartData, ref mode);
+                    var stockPartData = BuildPartList(partList.StockPartData, basePartList?.StockPartData, ref mode);
+                    var elementalPartData = BuildPartList(partList.ElementalPartData, basePartList?.ElementalPartData, ref mode);
+                    var accessory1PartData = BuildPartList(partList.Accessory1PartData, basePartList?.Accessory1PartData, ref mode);
+                    var accessory2PartData = BuildPartList(partList.Accessory2PartData, basePartList?.Accessory2PartData, ref mode);
+                    var materialPartData = BuildPartList(partList.MaterialPartData, basePartList?.MaterialPartData, ref mode);
+
+                    if (mode == null)
+                    {
+                        throw new InvalidOperationException();
+                    }
+
+                    writer.WritePropertyName(partListPath);
+                    writer.WriteStartObject();
+
+                    writer.WritePropertyName("mode");
+                    writer.WriteValue(mode.ToString());
+
+                    var associatedWeaponTypePath = (string)partList.AssociatedWeaponType?.GetPath();
+                    var baseAssociatedWeaponTypePath = (string)basePartList?.AssociatedWeaponType?.GetPath();
+                    if (associatedWeaponTypePath != null &&
+                        (baseAssociatedWeaponTypePath == null || associatedWeaponTypePath != baseAssociatedWeaponTypePath))
+                    {
+                        writer.WritePropertyName("weapon_type");
+                        writer.WriteValue(associatedWeaponTypePath);
+                    }
+
+                    WriteStrings(writer, "body", bodyPartData);
+                    WriteStrings(writer, "grip", gripPartData);
+                    WriteStrings(writer, "barrel", barrelPartData);
+                    WriteStrings(writer, "sight", sightPartData);
+                    WriteStrings(writer, "stock", stockPartData);
+                    WriteStrings(writer, "elemental", elementalPartData);
+                    WriteStrings(writer, "accessory1", accessory1PartData);
+                    WriteStrings(writer, "accessory2", accessory2PartData);
+                    WriteStrings(writer, "material", materialPartData);
+
+                    writer.WriteEndObject();
+                }
+                writer.WriteEndObject();
+            }
+
+            var itemBalancePartLists = new List<KeyValuePair<string, dynamic>>();
             using (var writer = Dataminer.NewDump("Item Balance.json"))
             {
                 writer.WriteStartObject();
-
                 var balances = engine.Objects
                     .Where(o => (o.IsA(inventoryBalanceClass) == true ||
                                  o.IsA(itemBalanceClass) == true ||
@@ -210,7 +234,8 @@ namespace DumpBalance
                     .OrderBy(o => o.GetPath());
                 foreach (dynamic balance in balances)
                 {
-                    if (balance.GetClass() == inventoryBalanceClass)
+                    var balanceClass = balance.GetClass();
+                    if (balanceClass == inventoryBalanceClass)
                     {
                         var type = GetBalanceType(balance);
                         if (type == null)
@@ -225,7 +250,6 @@ namespace DumpBalance
                         }
                     }
 
-                    var balanceClass = balance.GetClass();
                     var balancePath = (string)balance.GetPath();
 
                     writer.WritePropertyName(balancePath);
@@ -238,24 +262,23 @@ namespace DumpBalance
                         writer.WriteValue(baseBalance.GetPath());
                     }
 
-                    var typePath = (string)balance.InventoryDefinition?.GetPath();
-                    var baseTypePath = (string)balance.BaseDefinition?.InventoryDefinition?.GetPath();
-                    if (typePath != null && (baseTypePath == null || typePath != baseTypePath))
+                    var itemPath = (string)balance.InventoryDefinition?.GetPath();
+                    var baseItemPath = (string)balance.BaseDefinition?.InventoryDefinition?.GetPath();
+                    if (itemPath != null && (baseItemPath == null || itemPath != baseItemPath))
                     {
-                        writer.WritePropertyName("type");
-                        writer.WriteValue(typePath);
+                        writer.WritePropertyName("item");
+                        writer.WriteValue(itemPath);
                     }
 
                     if (balanceClass == classModBalanceClass &&
                         balance.ClassModDefinitions.Length > 0)
                     {
-                        dynamic[] classModDefinitions = balance.ClassModDefinitions;
-
-                        writer.WritePropertyName("types");
+                        dynamic[] classMods = balance.ClassModDefinitions;
+                        writer.WritePropertyName("items");
                         writer.WriteStartArray();
-                        foreach (var classModDefinition in classModDefinitions.OrderBy(cmd => cmd.GetPath()))
+                        foreach (var classMod in classMods.OrderBy(cmd => cmd.GetPath()))
                         {
-                            writer.WriteValue(classModDefinition.GetPath());
+                            writer.WriteValue(classMod.GetPath());
                         }
                         writer.WriteEndArray();
                     }
@@ -275,65 +298,160 @@ namespace DumpBalance
                         writer.WriteEndArray();
                     }
 
-                    var partList = balanceClass == inventoryBalanceClass
-                        ? balance.PartListCollection : balance.RuntimePartListCollection;
-                    if (partList != null)
+                    dynamic itemPartList;
+                    string itemPartListPath = null;
+                    if (balanceClass == inventoryBalanceClass)
                     {
-                        if (partList.GetClass().Path != "WillowGame.ItemPartListCollectionDefinition")
+                        itemPartList = balance.PartListCollection;
+                        if (itemPartList != null)
+                        {
+                            itemPartListPath = (string)itemPartList.GetPath();
+                        }
+                    }
+                    else
+                    {
+                        if (balance.PartListCollection != null)
                         {
                             throw new InvalidOperationException();
                         }
 
-                        var basePartList = baseBalance == null || baseBalance.GetClass() == inventoryBalanceClass
-                            ? null : baseBalance.RuntimePartListCollection;
-
-                        PartReplacementMode? mode = null;
-                        var alphaPartData = BuildCustomPartTypeData(partList.AlphaPartData, basePartList?.AlphaPartData, ref mode);
-                        var betaPartData = BuildCustomPartTypeData(partList.BetaPartData, basePartList?.BetaPartData, ref mode);
-                        var gammaPartData = BuildCustomPartTypeData(partList.GammaPartData, basePartList?.GammaPartData, ref mode);
-                        var deltaPartData = BuildCustomPartTypeData(partList.DeltaPartData, basePartList?.DeltaPartData, ref mode);
-                        var epsilonPartData = BuildCustomPartTypeData(partList.EpsilonPartData, basePartList?.EpsilonPartData, ref mode);
-                        var zetaPartData = BuildCustomPartTypeData(partList.ZetaPartData, basePartList?.ZetaPartData, ref mode);
-                        var etaPartData = BuildCustomPartTypeData(partList.EtaPartData, basePartList?.EtaPartData, ref mode);
-                        var thetaPartData = BuildCustomPartTypeData(partList.ThetaPartData, basePartList?.ThetaPartData, ref mode);
-                        var materialPartData = BuildCustomPartTypeData(partList.MaterialPartData, basePartList?.MaterialPartData, ref mode);
-
-                        if (mode == null)
+                        if (balance.ItemPartListCollection == null)
                         {
-                            mode = PartReplacementMode.Additive;
+                            throw new InvalidOperationException();
                         }
 
+                        itemPartList = balance.RuntimePartListCollection;
+                        if (itemPartList == null)
+                        {
+                            throw new InvalidOperationException();
+                        }
+
+                        itemPartListPath = (string)balance.ItemPartListCollection.GetPath();
+                    }
+
+                    if (itemPartList != null)
+                    {
+                        itemBalancePartLists.Add(new KeyValuePair<string, dynamic>(itemPartListPath, balance));
                         writer.WritePropertyName("parts");
-                        writer.WriteStartObject();
-
-                        writer.WritePropertyName("mode");
-                        writer.WriteValue(mode.ToString());
-
-                        var associatedItemPath = (string)partList.AssociatedItem?.GetPath();
-                        var baseAssociatedItemPath = (string)basePartList?.AssociatedItem?.GetPath();
-                        if (associatedItemPath != null &&
-                            (baseAssociatedItemPath == null || associatedItemPath != baseAssociatedItemPath))
-                        {
-                            writer.WritePropertyName("type");
-                            writer.WriteValue(associatedItemPath);
-                        }
-
-                        WriteStrings(writer, "alpha", alphaPartData);
-                        WriteStrings(writer, "beta", betaPartData);
-                        WriteStrings(writer, "gamma", gammaPartData);
-                        WriteStrings(writer, "delta", deltaPartData);
-                        WriteStrings(writer, "epsilon", epsilonPartData);
-                        WriteStrings(writer, "zeta", zetaPartData);
-                        WriteStrings(writer, "eta", etaPartData);
-                        WriteStrings(writer, "theta", thetaPartData);
-                        WriteStrings(writer, "material", materialPartData);
-
-                        writer.WriteEndObject();
+                        writer.WriteValue(itemPartListPath);
                     }
 
                     writer.WriteEndObject();
                 }
+                writer.WriteEndObject();
+            }
 
+            using (var writer = Dataminer.NewDump("Item Balance Part Lists.json"))
+            {
+                writer.WriteStartObject();
+                foreach (var kv in itemBalancePartLists)
+                {
+                    var partListPath = kv.Key;
+                    var balance = kv.Value;
+                    var balanceClass = balance.GetClass();
+                    var baseBalance = balance.BaseDefinition;
+
+                    PartReplacementMode? mode;
+                    dynamic partList;
+                    if (balanceClass == inventoryBalanceClass)
+                    {
+                        partList = balance.PartListCollection;
+                        if (partList == null)
+                        {
+                            throw new InvalidOperationException();
+                        }
+                        mode = (PartReplacementMode)partList.PartReplacementMode;
+                    }
+                    else
+                    {
+                        if (balance.PartListCollection != null)
+                        {
+                            throw new InvalidOperationException();
+                        }
+
+                        if (balance.ItemPartListCollection == null)
+                        {
+                            throw new InvalidOperationException();
+                        }
+
+                        partList = balance.RuntimePartListCollection;
+                        if (partList == null)
+                        {
+                            throw new InvalidOperationException();
+                        }
+                        mode = (PartReplacementMode)partList.PartReplacementMode;
+                    }
+
+                    if (partList.GetClass().Path != "WillowGame.ItemPartListCollectionDefinition")
+                    {
+                        throw new InvalidOperationException();
+                    }
+
+                    var basePartList = baseBalance == null ||
+                                       baseBalance.GetClass() == inventoryBalanceClass
+                        ? null : baseBalance.RuntimePartListCollection;
+
+                    List<string>
+                        alphaPartData, betaPartData, gammaPartData, deltaPartData, epsilonPartData,
+                        zetaPartData, etaPartData, thetaPartData, materialPartData;
+                    if (basePartList == null)
+                    {
+                        var associatedItem = partList.AssociatedItem;
+                        alphaPartData = BuildPartList(partList.AlphaPartData, associatedItem?.AlphaParts, ref mode);
+                        betaPartData = BuildPartList(partList.BetaPartData, associatedItem?.BetaParts, ref mode);
+                        gammaPartData = BuildPartList(partList.GammaPartData, associatedItem?.GammaParts, ref mode);
+                        deltaPartData = BuildPartList(partList.DeltaPartData, associatedItem?.DeltaParts, ref mode);
+                        epsilonPartData = BuildPartList(partList.EpsilonPartData, associatedItem?.EpsilonParts, ref mode);
+                        zetaPartData = BuildPartList(partList.ZetaPartData, associatedItem?.ZetaParts, ref mode);
+                        etaPartData = BuildPartList(partList.EtaPartData, associatedItem?.EtaParts, ref mode);
+                        thetaPartData = BuildPartList(partList.ThetaPartData, associatedItem?.ThetaParts, ref mode);
+                        materialPartData = BuildPartList(partList.MaterialPartData, associatedItem?.MaterialParts, ref mode);
+                    }
+                    else
+                    {
+                        alphaPartData = BuildPartList(partList.AlphaPartData, basePartList?.AlphaPartData, ref mode);
+                        betaPartData = BuildPartList(partList.BetaPartData, basePartList?.BetaPartData, ref mode);
+                        gammaPartData = BuildPartList(partList.GammaPartData, basePartList?.GammaPartData, ref mode);
+                        deltaPartData = BuildPartList(partList.DeltaPartData, basePartList?.DeltaPartData, ref mode);
+                        epsilonPartData = BuildPartList(partList.EpsilonPartData, basePartList?.EpsilonPartData, ref mode);
+                        zetaPartData = BuildPartList(partList.ZetaPartData, basePartList?.ZetaPartData, ref mode);
+                        etaPartData = BuildPartList(partList.EtaPartData, basePartList?.EtaPartData, ref mode);
+                        thetaPartData = BuildPartList(partList.ThetaPartData, basePartList?.ThetaPartData, ref mode);
+                        materialPartData = BuildPartList(partList.MaterialPartData, basePartList?.MaterialPartData, ref mode);
+                    }
+
+                    if (mode == null)
+                    {
+                        mode = PartReplacementMode.Additive;
+                    }
+
+                    writer.WritePropertyName(partListPath);
+                    writer.WriteStartObject();
+
+                    writer.WritePropertyName("mode");
+                    writer.WriteValue(mode.ToString());
+
+                    var associatedItemPath = (string)partList.AssociatedItem?.GetPath();
+                    var baseAssociatedItemPath = (string)basePartList?.AssociatedItem?.GetPath();
+                    if (associatedItemPath != null &&
+                        (baseAssociatedItemPath == null || associatedItemPath != baseAssociatedItemPath))
+                    {
+                        writer.WritePropertyName("item");
+                        writer.WriteValue(associatedItemPath);
+                    }
+
+                    WriteStrings(writer, "alpha", alphaPartData);
+                    WriteStrings(writer, "beta", betaPartData);
+                    WriteStrings(writer, "gamma", gammaPartData);
+                    WriteStrings(writer, "delta", deltaPartData);
+                    WriteStrings(writer, "epsilon", epsilonPartData);
+                    WriteStrings(writer, "zeta", zetaPartData);
+                    WriteStrings(writer, "eta", etaPartData);
+                    WriteStrings(writer, "theta", thetaPartData);
+                    WriteStrings(writer, "material", materialPartData);
+
+                    writer.WriteEndObject();
+                }
                 writer.WriteEndObject();
             }
         }
@@ -351,7 +469,7 @@ namespace DumpBalance
             return null;
         }
 
-        private static List<string> BuildCustomPartTypeData(dynamic data, dynamic baseData, ref PartReplacementMode? mode)
+        private static List<string> BuildPartList(dynamic data, dynamic baseData, ref PartReplacementMode? mode)
         {
             if ((bool)data.bEnabled == false)
             {
@@ -381,7 +499,10 @@ namespace DumpBalance
                 return partPaths;
             }
 
-            if ((bool)baseData.bEnabled == false)
+            var baseDataPath = (string)baseData.GetClass().Path;
+            if ((baseDataPath == "WillowGame.ItemPartListCollectionDefinition.ItemCustomPartTypeData" ||
+                 baseDataPath == "WillowGame.WeaponPartListCollectionDefinition.WeaponCustomPartTypeData") &&
+                (bool)baseData.bEnabled == false)
             {
                 if (mode == null)
                 {
@@ -404,10 +525,19 @@ namespace DumpBalance
                 }
             }
 
-            if (mode == PartReplacementMode.Selective || basePartPaths.Except(partPaths).Any() == true)
+            if (mode == PartReplacementMode.Selective ||
+                mode == PartReplacementMode.Complete ||
+                basePartPaths.Except(partPaths).Any() == true)
             {
-                mode = PartReplacementMode.Selective;
-                return StringComparer.Equals(partPaths, basePartPaths) == true ? null : partPaths;
+                if (mode != PartReplacementMode.Selective &&
+                    mode != PartReplacementMode.Complete)
+                {
+                    mode = PartReplacementMode.Selective;
+                }
+                return mode == PartReplacementMode.Selective &&
+                       StringComparer.Equals(partPaths, basePartPaths) == true
+                           ? null
+                           : partPaths;
             }
 
             if (mode != null && mode != PartReplacementMode.Additive)

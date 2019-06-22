@@ -38,43 +38,43 @@ namespace DumpItems
 
         private static void Go(Engine engine)
         {
-            var weaponBalanceDefinitionClass = engine.GetClass("WillowGame.WeaponBalanceDefinition");
-            var missionWeaponBalanceDefinitionClass = engine.GetClass("WillowGame.MissionWeaponBalanceDefinition");
-            var inventoryBalanceDefinitionClass = engine.GetClass("WillowGame.InventoryBalanceDefinition");
-            var itemBalanceDefinitionClass = engine.GetClass("WillowGame.ItemBalanceDefinition");
-            var classModBalanceDefinitionClass = engine.GetClass("WillowGame.ClassModBalanceDefinition");
-            if (weaponBalanceDefinitionClass == null ||
-                missionWeaponBalanceDefinitionClass == null ||
-                inventoryBalanceDefinitionClass == null ||
-                itemBalanceDefinitionClass == null ||
-                classModBalanceDefinitionClass == null)
+            var weaponBalanceClass = engine.GetClass("WillowGame.WeaponBalanceDefinition");
+            var missionWeaponBalanceClass = engine.GetClass("WillowGame.MissionWeaponBalanceDefinition");
+            var inventoryBalanceClass = engine.GetClass("WillowGame.InventoryBalanceDefinition");
+            var itemBalanceClass = engine.GetClass("WillowGame.ItemBalanceDefinition");
+            var classModBalanceClass = engine.GetClass("WillowGame.ClassModBalanceDefinition");
+            if (weaponBalanceClass == null ||
+                missionWeaponBalanceClass == null ||
+                inventoryBalanceClass == null ||
+                itemBalanceClass == null ||
+                classModBalanceClass == null)
             {
                 throw new InvalidOperationException();
             }
 
             var weaponTypes = new List<dynamic>();
             {
-                var balanceDefinitions = engine.Objects
-                    .Where(o => (o.IsA(inventoryBalanceDefinitionClass) ||
-                                 o.IsA(weaponBalanceDefinitionClass)) &&
+                var balances = engine.Objects
+                    .Where(o => (o.IsA(inventoryBalanceClass) ||
+                                 o.IsA(weaponBalanceClass)) &&
                                 o.GetName().StartsWith("Default__") == false)
                     .OrderBy(o => o.GetPath());
-                foreach (dynamic balanceDefinition in balanceDefinitions)
+                foreach (dynamic balance in balances)
                 {
-                    if (balanceDefinition.InventoryDefinition != null &&
-                        balanceDefinition.InventoryDefinition.GetClass().Path == "WillowGame.WeaponTypeDefinition")
+                    if (balance.InventoryDefinition != null &&
+                        balance.InventoryDefinition.GetClass().Path == "WillowGame.WeaponTypeDefinition")
                     {
-                        weaponTypes.Add(balanceDefinition.InventoryDefinition);
+                        weaponTypes.Add(balance.InventoryDefinition);
                     }
 
-                    if (balanceDefinition.GetClass() == weaponBalanceDefinitionClass)
+                    if (balance.GetClass() == weaponBalanceClass)
                     {
-                        if (balanceDefinition.PartListCollection != null)
+                        if (balance.PartListCollection != null)
                         {
                             throw new NotSupportedException();
                         }
 
-                        var partListCollection = balanceDefinition.WeaponPartListCollection;
+                        var partListCollection = balance.WeaponPartListCollection;
                         if (partListCollection == null)
                         {
                             throw new InvalidOperationException();
@@ -91,10 +91,10 @@ namespace DumpItems
                 }
             }
 
+            var weaponPartLists = new List<dynamic>();
             using (var writer = Dataminer.NewDump("Weapon Types.json"))
             {
                 writer.WriteStartObject();
-
                 foreach (var weaponType in weaponTypes.Distinct().OrderBy(wp => wp.GetPath()))
                 {
                     writer.WritePropertyName(weaponType.GetPath());
@@ -139,57 +139,65 @@ namespace DumpItems
                         writer.WriteEndArray();
                     }
 
-                    DumpCustomPartTypeData(writer, "body_parts", weaponType.BodyParts);
-                    DumpCustomPartTypeData(writer, "grip_parts", weaponType.GripParts);
-                    DumpCustomPartTypeData(writer, "barrel_parts", weaponType.BarrelParts);
-                    DumpCustomPartTypeData(writer, "sight_parts", weaponType.SightParts);
-                    DumpCustomPartTypeData(writer, "stock_parts", weaponType.StockParts);
-                    DumpCustomPartTypeData(writer, "elemental_parts", weaponType.ElementalParts);
-                    DumpCustomPartTypeData(writer, "accessory1_parts", weaponType.Accessory1Parts);
-                    DumpCustomPartTypeData(writer, "accessory2_parts", weaponType.Accessory2Parts);
-                    DumpCustomPartTypeData(writer, "material_parts", weaponType.MaterialParts);
+                    WritePartListReference(writer, "body_parts", weaponType.BodyParts, weaponPartLists);
+                    WritePartListReference(writer, "grip_parts", weaponType.GripParts, weaponPartLists);
+                    WritePartListReference(writer, "barrel_parts", weaponType.BarrelParts, weaponPartLists);
+                    WritePartListReference(writer, "sight_parts", weaponType.SightParts, weaponPartLists);
+                    WritePartListReference(writer, "stock_parts", weaponType.StockParts, weaponPartLists);
+                    WritePartListReference(writer, "elemental_parts", weaponType.ElementalParts, weaponPartLists);
+                    WritePartListReference(writer, "accessory1_parts", weaponType.Accessory1Parts, weaponPartLists);
+                    WritePartListReference(writer, "accessory2_parts", weaponType.Accessory2Parts, weaponPartLists);
+                    WritePartListReference(writer, "material_parts", weaponType.MaterialParts, weaponPartLists);
 
                     writer.WriteEndObject();
                 }
-
                 writer.WriteEndObject();
             }
 
-            var itemTypes = new List<dynamic>();
+            using (var writer = Dataminer.NewDump("Weapon Part Lists.json"))
             {
-                var balanceDefinitions = engine.Objects
-                    .Where(o => (o.IsA(inventoryBalanceDefinitionClass) ||
-                                 o.IsA(itemBalanceDefinitionClass) ||
-                                 o.IsA(classModBalanceDefinitionClass)) &&
+                writer.WriteStartObject();
+                foreach (var partList in weaponPartLists.Distinct().OrderBy(wp => wp.GetPath()))
+                {
+                    WritePartList(writer, partList.GetPath(), partList);
+                }
+                writer.WriteEndObject();
+            }
+
+            var items = new List<dynamic>();
+            {
+                var balances = engine.Objects
+                    .Where(o => (o.IsA(inventoryBalanceClass) ||
+                                 o.IsA(itemBalanceClass) ||
+                                 o.IsA(classModBalanceClass)) &&
                                 o.GetName().StartsWith("Default__") == false)
                     .OrderBy(o => o.GetPath());
-                foreach (dynamic balanceDefinition in balanceDefinitions)
+                foreach (dynamic balance in balances)
                 {
-                    var uclass = balanceDefinition.GetClass();
-
-                    if (uclass != inventoryBalanceDefinitionClass &&
-                        uclass != itemBalanceDefinitionClass &&
-                        uclass != classModBalanceDefinitionClass)
+                    var balanceClass = balance.GetClass();
+                    if (balanceClass != inventoryBalanceClass &&
+                        balanceClass != itemBalanceClass &&
+                        balanceClass != classModBalanceClass)
                     {
                         throw new NotSupportedException();
                     }
 
-                    if (uclass == classModBalanceDefinitionClass &&
-                        balanceDefinition.ClassModDefinitions.Length > 0)
+                    if (balanceClass == classModBalanceClass &&
+                        balance.ClassModDefinitions.Length > 0)
                     {
-                        IEnumerable<dynamic> classModDefinitions = balanceDefinition.ClassModDefinitions;
-                        itemTypes.AddRange(classModDefinitions.Where(cmd => cmd != null));
+                        IEnumerable<dynamic> classMods = balance.ClassModDefinitions;
+                        items.AddRange(classMods.Where(cmd => cmd != null));
                     }
 
-                    if (balanceDefinition.InventoryDefinition != null &&
-                        balanceDefinition.InventoryDefinition.GetClass().Path != "WillowGame.WeaponTypeDefinition")
+                    if (balance.InventoryDefinition != null &&
+                        balance.InventoryDefinition.GetClass().Path != "WillowGame.WeaponTypeDefinition")
                     {
-                        itemTypes.Add(balanceDefinition.InventoryDefinition);
+                        items.Add(balance.InventoryDefinition);
                     }
 
-                    var partListCollection = uclass == classModBalanceDefinitionClass
-                                                 ? balanceDefinition.ItemPartListCollection
-                                                 : balanceDefinition.PartListCollection;
+                    var partListCollection = balanceClass == classModBalanceClass
+                                                 ? balance.ItemPartListCollection
+                                                 : balance.PartListCollection;
                     if (partListCollection != null)
                     {
                         if (partListCollection.GetClass().Path != "WillowGame.ItemPartListCollectionDefinition")
@@ -199,45 +207,44 @@ namespace DumpItems
 
                         if (partListCollection.AssociatedItem != null)
                         {
-                            itemTypes.Add(partListCollection.AssociatedItem);
+                            items.Add(partListCollection.AssociatedItem);
                         }
                     }
                 }
             }
 
-            using (var writer = Dataminer.NewDump("Item Types.json"))
+            var itemPartLists = new List<dynamic>();
+            using (var writer = Dataminer.NewDump("Items.json"))
             {
                 writer.WriteStartObject();
-
-                foreach (var itemType in itemTypes.Distinct().OrderBy(wp => wp.GetPath()))
+                foreach (var item in items.Distinct().OrderBy(wp => wp.GetPath()))
                 {
-                    UnrealClass itemPartClass = itemType.GetClass();
-
-                    if (itemPartClass.Path != "WillowGame.UsableItemDefinition" &&
-                        itemPartClass.Path != "WillowGame.ArtifactDefinition" &&
-                        itemPartClass.Path != "WillowGame.UsableCustomizationItemDefinition" &&
-                        itemPartClass.Path != "WillowGame.ClassModDefinition" &&
-                        itemPartClass.Path != "WillowGame.GrenadeModDefinition" &&
-                        itemPartClass.Path != "WillowGame.ShieldDefinition" &&
-                        itemPartClass.Path != "WillowGame.MissionItemDefinition" &&
-                        itemPartClass.Path != "WillowGame.CrossDLCClassModDefinition")
+                    UnrealClass itemClass = item.GetClass();
+                    if (itemClass.Path != "WillowGame.UsableItemDefinition" &&
+                        itemClass.Path != "WillowGame.ArtifactDefinition" &&
+                        itemClass.Path != "WillowGame.UsableCustomizationItemDefinition" &&
+                        itemClass.Path != "WillowGame.ClassModDefinition" &&
+                        itemClass.Path != "WillowGame.GrenadeModDefinition" &&
+                        itemClass.Path != "WillowGame.ShieldDefinition" &&
+                        itemClass.Path != "WillowGame.MissionItemDefinition" &&
+                        itemClass.Path != "WillowGame.CrossDLCClassModDefinition")
                     {
                         throw new InvalidOperationException();
                     }
 
-                    writer.WritePropertyName(itemType.GetPath());
+                    writer.WritePropertyName(item.GetPath());
                     writer.WriteStartObject();
 
-                    var itemName = (string)itemType.ItemName;
+                    var itemName = (string)item.ItemName;
                     if (string.IsNullOrEmpty(itemName) == false &&
                         itemName != "None")
                     {
                         writer.WritePropertyName("name");
                         writer.WriteValue(itemName);
                     }
-                    else if (itemPartClass.Path == "WillowGame.UsableCustomizationItemDefinition")
+                    else if (itemClass.Path == "WillowGame.UsableCustomizationItemDefinition")
                     {
-                        var customizationDef = itemType.CustomizationDef;
+                        var customizationDef = item.CustomizationDef;
                         if (string.IsNullOrEmpty((string)customizationDef.CustomizationName) == false)
                         {
                             writer.WritePropertyName("name");
@@ -245,21 +252,21 @@ namespace DumpItems
                         }
                     }
 
-                    if ((bool)itemType.bItemNameIsFullName == true)
+                    if ((bool)item.bItemNameIsFullName == true)
                     {
                         writer.WritePropertyName("has_full_name");
-                        writer.WriteValue(itemType.bItemNameIsFullName);
+                        writer.WriteValue(item.bItemNameIsFullName);
                     }
 
                     writer.WritePropertyName("type");
-                    writer.WriteValue(_ItemTypeMapping[itemPartClass.Path]);
+                    writer.WriteValue(_ItemTypeMapping[itemClass.Path]);
 
-                    if (itemType.TitleList != null &&
-                        itemType.TitleList.Length > 0)
+                    if (item.TitleList != null &&
+                        item.TitleList.Length > 0)
                     {
                         writer.WritePropertyName("titles");
                         writer.WriteStartArray();
-                        IEnumerable<dynamic> titleList = itemType.TitleList;
+                        IEnumerable<dynamic> titleList = item.TitleList;
                         foreach (var title in titleList
                             .Where(tp => tp != null)
                             .OrderBy(tp => tp.GetPath()))
@@ -269,12 +276,12 @@ namespace DumpItems
                         writer.WriteEndArray();
                     }
 
-                    if (itemType.PrefixList != null &&
-                        itemType.PrefixList.Length > 0)
+                    if (item.PrefixList != null &&
+                        item.PrefixList.Length > 0)
                     {
                         writer.WritePropertyName("prefixes");
                         writer.WriteStartArray();
-                        IEnumerable<dynamic> prefixList = itemType.PrefixList;
+                        IEnumerable<dynamic> prefixList = item.PrefixList;
                         foreach (var prefix in prefixList
                             .Where(pp => pp != null)
                             .OrderBy(pp => pp.GetPath()))
@@ -284,43 +291,65 @@ namespace DumpItems
                         writer.WriteEndArray();
                     }
 
-                    DumpCustomPartTypeData(writer, "alpha_parts", itemType.AlphaParts);
-                    DumpCustomPartTypeData(writer, "beta_parts", itemType.BetaParts);
-                    DumpCustomPartTypeData(writer, "gamma_parts", itemType.GammaParts);
-                    DumpCustomPartTypeData(writer, "delta_parts", itemType.DeltaParts);
-                    DumpCustomPartTypeData(writer, "epsilon_parts", itemType.EpsilonParts);
-                    DumpCustomPartTypeData(writer, "zeta_parts", itemType.ZetaParts);
-                    DumpCustomPartTypeData(writer, "eta_parts", itemType.EtaParts);
-                    DumpCustomPartTypeData(writer, "theta_parts", itemType.ThetaParts);
-                    DumpCustomPartTypeData(writer, "material_parts", itemType.MaterialParts);
+                    WritePartListReference(writer, "alpha_parts", item.AlphaParts, itemPartLists);
+                    WritePartListReference(writer, "beta_parts", item.BetaParts, itemPartLists);
+                    WritePartListReference(writer, "gamma_parts", item.GammaParts, itemPartLists);
+                    WritePartListReference(writer, "delta_parts", item.DeltaParts, itemPartLists);
+                    WritePartListReference(writer, "epsilon_parts", item.EpsilonParts, itemPartLists);
+                    WritePartListReference(writer, "zeta_parts", item.ZetaParts, itemPartLists);
+                    WritePartListReference(writer, "eta_parts", item.EtaParts, itemPartLists);
+                    WritePartListReference(writer, "theta_parts", item.ThetaParts, itemPartLists);
+                    WritePartListReference(writer, "material_parts", item.MaterialParts, itemPartLists);
 
                     writer.WriteEndObject();
                 }
+                writer.WriteEndObject();
+            }
 
+            using (var writer = Dataminer.NewDump("Item Part Lists.json"))
+            {
+                writer.WriteStartObject();
+                foreach (var partList in itemPartLists.Distinct().OrderBy(wp => wp.GetPath()))
+                {
+                    WritePartList(writer, partList.GetPath(), partList);
+                }
                 writer.WriteEndObject();
             }
         }
 
-        private static void DumpCustomPartTypeData(JsonWriter writer, string name, dynamic customPartTypeData)
+        private static void WritePartListReference(JsonWriter writer, string name, dynamic partList, List<dynamic> partLists)
         {
-            if (customPartTypeData != null)
+            if (partList != null)
             {
-                var weightedParts = ((IEnumerable<dynamic>)customPartTypeData.WeightedParts).ToArray();
-                if (weightedParts.Length > 0)
-                {
-                    writer.WritePropertyName(name);
-                    writer.WriteStartArray();
-
-                    foreach (var weightedPart in weightedParts
-                        .Where(wp => wp.Part != null)
-                        .OrderBy(wp => wp.Part.GetPath()))
-                    {
-                        writer.WriteValue(weightedPart.Part.GetPath());
-                    }
-
-                    writer.WriteEndArray();
-                }
+                partLists.Add(partList);
+                writer.WritePropertyName(name);
+                writer.WriteValue(partList.GetPath());
             }
+        }
+
+        private static void WritePartList(JsonWriter writer, string name, dynamic data)
+        {
+            if (data == null)
+            {
+                return;
+            }
+
+            var weightedParts = ((IEnumerable<dynamic>)data.WeightedParts).ToArray();
+            if (weightedParts.Length == 0)
+            {
+                return;
+            }
+
+            writer.WritePropertyName(name);
+            writer.WriteStartArray();
+            foreach (var weightedPartPath in weightedParts
+                .Where(wp => wp.Part != null)
+                .Select(wp => (string)wp.Part.GetPath())
+                .OrderBy(wpp => wpp))
+            {
+                writer.WriteValue(weightedPartPath);
+            }
+            writer.WriteEndArray();
         }
 
         private static Dictionary<string, string> _ItemTypeMapping = new Dictionary<string, string>()

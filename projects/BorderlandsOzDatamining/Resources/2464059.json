@@ -1,8 +1,8 @@
-/* version 1.0.6 */
+/* version 2.0.0 - Wonderlands Ad */
 {
   "base_address": 4194304, /* 0x400000 */
-  "global_name_array_address": 34162948, /* 0x2094904 */
-  "global_object_array_address": 34440424, /* 0x20D84E8 */
+  "global_name_array_address": 26251620, /* 0x1909164 */
+  "global_object_array_address": 26522944, /* 0x194B540 */
   "name_entry_index_offset": 8, /* 0x8 */
   "name_entry_string_offset": 16, /* 0x10 */
   "offsets": {

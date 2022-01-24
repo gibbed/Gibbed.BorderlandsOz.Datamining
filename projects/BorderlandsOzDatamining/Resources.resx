@@ -139,4 +139,16 @@
   <data name="1838608" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>Resources\1838608.json;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
   </data>
+  <data name="2132293" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\2132293.json;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="2140713" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\2140713.json;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="2209892" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\2209892.json;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="2464059" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\2464059.json;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
 </root>

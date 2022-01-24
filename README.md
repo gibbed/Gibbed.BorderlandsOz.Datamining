@@ -6,7 +6,7 @@ They function by dumping information from a running instance of Borderlands: The
 
 ## Usage
 
-All tools should be run while Borderlands 2 is currently in the specified state.
+All tools should be run while Borderlands: The Pre-Sequel! is currently in the specified state.
 
 - `DumpAssetLibraryManager`: main menu
 - `DumpBalance`: in-game

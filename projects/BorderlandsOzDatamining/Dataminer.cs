@@ -81,7 +81,7 @@ namespace BorderlandsOzDatamining
             var process = this.FindSuitableProcess(out configText);
             if (process == null)
             {
-                Console.WriteLine("Failed to find a suitable running Borderlands 2 process.");
+                Console.WriteLine("Failed to find a suitable running Borderlands: The Pre-Sequel process.");
                 return;
             }
 
